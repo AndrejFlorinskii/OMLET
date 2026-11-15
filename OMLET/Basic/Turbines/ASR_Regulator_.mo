@@ -1,34 +1,34 @@
-﻿within Turbines;
+﻿within OMLET.Basic.Turbines;
 model ASR_Regulator_
 
   parameter Real Sigma=0.0475 "Slip deviation control coefficient";
   parameter Real Tauc=0.15 "Slip deviation time constant";
 
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function SlipDeviation(b={-1/
-        Sigma}, a={1}) annotation (extent=[-74,57.3333; -27.3333,104],
-      Placement(transformation(extent={{-64,-32},{-11.3333,16}}, rotation=0)));
-  LEPSE.Interfaces.Signal_pin ds_pin annotation (
+  Excitation_systems.Logic.Transfer_Function SlipDeviation(b={-1/Sigma},
+      a={1})      annotation (extent=[-74,57.3333; -27.3333,104],
+      Placement(transformation(extent={{-64,-32},{-11.3333,16}}, rotation
+          =0)));
+  OMLET.Interfaces.Signal_pin ds_pin annotation (
     extent=[-96,64; -86,76],
     layer="icon",
-    Placement(transformation(extent={{-106,-14},{-96,-2}},
-                                                         rotation=0),
+    Placement(transformation(extent={{-106,-14},{-96,-2}}, rotation=0),
         iconTransformation(extent={{-106,-14},{-96,-2}})));
-  LEPSE.Interfaces.Signal_pin out_pin annotation (
+  OMLET.Interfaces.Signal_pin out_pin annotation (
     extent=[86,2; 96,22],
     layer="icon",
-    Placement(transformation(extent={{134,-10},{144,10}},
-                                                        rotation=0),
+    Placement(transformation(extent={{134,-10},{144,10}}, rotation=0),
         iconTransformation(extent={{134,-10},{144,10}})));
 
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function Time_constant(b={1}, a=
-        {Tauc,1})
+  Excitation_systems.Logic.Transfer_Function Time_constant(b={1}, a={Tauc,
+        1})
     annotation (Placement(transformation(extent={{64,-24},{118,22}})));
-  LEPSE.Interfaces.Signal_pin Mu0_pin annotation (
+  Interfaces.Signal_pin       Mu0_pin
+                                     annotation (
     extent=[-96,64; -86,76],
     layer="icon",
-    Placement(transformation(extent={{-106,34},{-96,46}}, rotation=0),
+    Placement(transformation(extent={{-106,34},{-96,46}},rotation=0),
         iconTransformation(extent={{-106,32},{-96,44}})));
-  LEPSE.Basic.Excitation_systems.Logic.Summator_2 summator_2_1
+  Excitation_systems.Logic.Summator_2 summator_2_1
     annotation (Placement(transformation(extent={{16,-10},{36,10}})));
 equation
 

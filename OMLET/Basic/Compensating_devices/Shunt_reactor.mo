@@ -1,6 +1,6 @@
-﻿within ;
+﻿within OMLET.Basic.Compensating_devices;
 model Shunt_reactor
- outer LEPSE.Basic.SysData sysData;
+ outer SysData sysData;
 
   parameter Boolean inService = true "Reactor topological condition";
 
@@ -22,10 +22,10 @@ model Shunt_reactor
   Real Idr "Q-axis current of reactor";
   Real Pr_fact "Active power of reactor fact";
   Real Qr_fact "Reactive power of reactor fact";
-  LEPSE.Interfaces.Pin_v2 inp annotation (
+  OMLET.Interfaces.Pin_v2 inp annotation (
     extent=[-10,76; 10,96],
     layer="icon",
-    Placement(transformation(extent={{-10,88},{10,108}},rotation=0),
+    Placement(transformation(extent={{-10,88},{10,108}}, rotation=0),
         iconTransformation(extent={{-10,88},{10,108}})));
 initial equation
   // calculating conductivity from power

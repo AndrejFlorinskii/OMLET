@@ -4,7 +4,7 @@ model SMIB_eq_motion_IB_simple
   parameter Boolean globalDisplay_U = true;
   parameter Boolean globalDisplay_S = true;
 
-  OMLET.Basic.Generators.Numerical_units.Infinite_bus_simple G2(
+  OMLET.Basic.Generators.Infinite_bus_simple G2(
     Mtmax=1.1,
     Mtmin=-1.1,
     Ut=330,
@@ -21,7 +21,7 @@ model SMIB_eq_motion_IB_simple
     Ugnom=330,
     Tj_p=500,
     TregOff=9) annotation (Placement(transformation(extent={{98,-6},{68,26}})));
-  OMLET.Basic.Transformers.Transformers_numerical_units.Transformer Transformer(
+  OMLET.Basic.Transformers.Transformer Transformer(
     Sbaz=Transformer.sysData.Sbaz,
     n_step=0,
     Rtrans=0.8,
@@ -29,7 +29,7 @@ model SMIB_eq_motion_IB_simple
     Btrans=10,
     displayPowerFlow=globalDisplay_S)
     annotation (Placement(transformation(extent={{-36,-6},{-10,24}})));
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_1(
+  OMLET.Basic.Branches.HVline Line_1(
     Rline=2.5,
     Xline=29,
     Bline1=170,
@@ -51,21 +51,21 @@ model SMIB_eq_motion_IB_simple
     Ubaz=330,
     fbaz=50)
     annotation (Placement(transformation(extent={{-100,-64},{-80,-44}})));
-  OMLET.Basic.Shunts.Shunts_numerical_units.ShortCircuitShunt shortCircuitShunt_NU(
+  OMLET.Basic.Shunts.ShortCircuitShunt shortCircuitShunt_NU(
     Bn=100000,
     Gn=100000,
     TkzOn=10,
     dTkzOn=0.2)
     annotation (Placement(transformation(extent={{-18,-42},{0,-18}})));
 
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_2(
+  OMLET.Basic.Branches.HVline Line_2(
     Rline=2.5,
     Xline=29,
     Bline1=170,
     Bline2=170,
     displayPowerFlow=globalDisplay_S)
     annotation (Placement(transformation(extent={{14,-46},{40,-10}})));
-  Basic.Generators.Numerical_units.Equation_motion_grid G1(
+  Basic.Generators.Equation_motion_grid G1(
     Ut=20.5,
     X1d_p=0.241,
     Mtmax=1.1,

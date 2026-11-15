@@ -1,4 +1,4 @@
-﻿within Examples;
+﻿within OMLET.Examples;
 model KKT_diploma
   extends KKT_base(
     G53(G53_Regulator(

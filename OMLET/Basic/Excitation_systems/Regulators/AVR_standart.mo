@@ -1,4 +1,4 @@
-﻿within Regulators;
+﻿within OMLET.Basic.Excitation_systems.Regulators;
 model AVR_standart
   parameter Real K0u=-10 "Voltage deviation control coefficient";
   parameter Real K1u=0 "Voltage derivative control coefficient";
@@ -18,76 +18,77 @@ model AVR_standart
   constant Real T1w=0.026 "Frequency derivative time constant";
   constant Real T1if=0.03 "Field current derivative time constant";
 
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function VoltageDeviation(b={K0u},
-      a={T0u,1}) annotation (extent=[-74,57.3333; -27.3333,104], Placement(
+  Logic.Transfer_Function VoltageDeviation(b={K0u}, a={T0u,1})
+    annotation (extent=[-74,57.3333; -27.3333,104], Placement(
         transformation(extent={{-86,37.3333},{-39.3333,84}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function VoltageDerivative(b={K1u,0},
-      a={T1u,1}) annotation (extent=[-73.3333,17.3333; -26.6667,64], Placement(
-        transformation(extent={{-85.3333,15.3333},{-38.6667,62}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyBlockD(b={1}, a=
-        {Tfb,1}) annotation (extent=[-82.6667,-22.6667; -48,24], Placement(
-        transformation(extent={{-86.6667,-12.6667},{-52,34}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyBlockU(b={1,0},
-      a={Tfb,1}) annotation (extent=[-82,-63.3333; -48,-16], Placement(
+  Logic.Transfer_Function VoltageDerivative(b={K1u,0}, a={T1u,1})
+    annotation (extent=[-73.3333,17.3333; -26.6667,64], Placement(
+        transformation(extent={{-85.3333,15.3333},{-38.6667,62}},
+          rotation=0)));
+  Logic.Transfer_Function FrequencyBlockD(b={1}, a={Tfb,1}) annotation (
+     extent=[-82.6667,-22.6667; -48,24], Placement(transformation(
+          extent={{-86.6667,-12.6667},{-52,34}}, rotation=0)));
+  Logic.Transfer_Function FrequencyBlockU(b={1,0}, a={Tfb,1})
+    annotation (extent=[-82,-63.3333; -48,-16], Placement(
         transformation(extent={{-86,-43.3333},{-52,4}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyDeviation(b={K0w,0},
-      a={T0w,1}) annotation (extent=[-28,-46; 10,2], Placement(transformation(
-          extent={{-32,-44},{6,4}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyDerivative(b={K1w,0},
-      a={T1w,1}) annotation (extent=[-24.6667,-19.3333; 10,28], Placement(
+  Logic.Transfer_Function FrequencyDeviation(b={K0w,0}, a={T0w,1})
+    annotation (extent=[-28,-46; 10,2], Placement(transformation(extent
+          ={{-32,-44},{6,4}}, rotation=0)));
+  Logic.Transfer_Function FrequencyDerivative(b={K1w,0}, a={T1w,1})
+    annotation (extent=[-24.6667,-19.3333; 10,28], Placement(
         transformation(extent={{-30.6667,-5.3333},{4,42}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function ExcitationCurrent(b={K1if,0},
-      a={T1if,1}) annotation (extent=[-74,-102; -27.3333,-55.3333], Placement(
-        transformation(extent={{-86,-68},{-39.3333,-21.3333}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function SimpleExciter(b={1}, a=
-        {Tokp,1}) annotation (extent=[56,-24; 83.3333,22.6667], Placement(
-        transformation(extent={{90,6},{117.333,52.6667}}, rotation=0)));
-  LEPSE.Interfaces.Signal_pin dV_pin annotation (
+  Logic.Transfer_Function ExcitationCurrent(b={K1if,0}, a={T1if,1})
+    annotation (extent=[-74,-102; -27.3333,-55.3333], Placement(
+        transformation(extent={{-86,-68},{-39.3333,-21.3333}}, rotation
+          =0)));
+  Logic.Transfer_Function SimpleExciter(b={1}, a={Tokp,1}) annotation (
+      extent=[56,-24; 83.3333,22.6667], Placement(transformation(extent
+          ={{90,6},{117.333,52.6667}}, rotation=0)));
+  OMLET.Interfaces.Signal_pin dV_pin annotation (
     extent=[-96,64; -86,76],
     layer="icon",
-    Placement(transformation(extent={{-106,44},{-96,56}},rotation=0),
+    Placement(transformation(extent={{-106,44},{-96,56}}, rotation=0),
         iconTransformation(extent={{-106,44},{-96,56}})));
-  LEPSE.Interfaces.Signal_pin dV1_pin annotation (
+  OMLET.Interfaces.Signal_pin dV1_pin annotation (
     extent=[-96,34; -86,46],
     layer="icon",
-    Placement(transformation(extent={{-106,14},{-96,26}},rotation=0),
+    Placement(transformation(extent={{-106,14},{-96,26}}, rotation=0),
         iconTransformation(extent={{-106,14},{-96,26}})));
-  LEPSE.Interfaces.Signal_pin dfsys_pin annotation (
+  OMLET.Interfaces.Signal_pin dfsys_pin annotation (
     extent=[-96,4; -86,16],
     layer="icon",
-    Placement(transformation(extent={{-106,-16},{-96,-4}},
-                                                        rotation=0),
+    Placement(transformation(extent={{-106,-16},{-96,-4}}, rotation=0),
         iconTransformation(extent={{-106,-16},{-96,-4}})));
-  LEPSE.Interfaces.Signal_pin dfU_pin annotation (
+  OMLET.Interfaces.Signal_pin dfU_pin annotation (
     extent=[-96,-26; -86,-14],
     layer="icon",
-    Placement(transformation(extent={{-106,-46},{-96,-34}},rotation=0),
+    Placement(transformation(extent={{-106,-46},{-96,-34}}, rotation=0),
         iconTransformation(extent={{-106,-46},{-96,-34}})));
-  LEPSE.Interfaces.Signal_pin dif1_pin annotation (
+  OMLET.Interfaces.Signal_pin dif1_pin annotation (
     extent=[-96,-56; -86,-44],
     layer="icon",
-    Placement(transformation(extent={{-106,-70},{-96,-58}},rotation=0),
+    Placement(transformation(extent={{-106,-70},{-96,-58}}, rotation=0),
         iconTransformation(extent={{-106,-70},{-96,-58}})));
-  LEPSE.Interfaces.Signal_pin out_pin annotation (
+  OMLET.Interfaces.Signal_pin out_pin annotation (
     extent=[86,2; 96,22],
     layer="icon",
-    Placement(transformation(extent={{136,-18},{146,2}},rotation=0),
+    Placement(transformation(extent={{136,-18},{146,2}}, rotation=0),
         iconTransformation(extent={{136,-18},{146,2}})));
-  LEPSE.Basic.Excitation_systems.Logic.Summator_2 Summator1 annotation (
-     extent=[-44,-32; -30,-12], Placement(transformation(extent={{-50,-4},
+  OMLET.Basic.Excitation_systems.Logic.Summator_2 Summator1 annotation (
+      extent=[-44,-32; -30,-12], Placement(transformation(extent={{-50,-4},
             {-36,16}}, rotation=0)));
-  LEPSE.Interfaces.Signal_pin Ut_pin annotation (Placement(transformation(
-          extent={{-106,-90},{-94,-78}}),iconTransformation(extent={{-106,
+  OMLET.Interfaces.Signal_pin Ut_pin annotation (Placement(transformation(
+          extent={{-106,-90},{-94,-78}}), iconTransformation(extent={{-106,
             -90},{-94,-78}})));
-  LEPSE.Basic.Excitation_systems.Logic.logical_switch logical_switch1(
+  OMLET.Basic.Excitation_systems.Logic.logical_switch logical_switch1(
     a1=Uforc,
     a2=Udeforc,
     a3=K0u,
     a4=Tforcedelay)
     annotation (Placement(transformation(extent={{66,20},{86,40}})));
-  LEPSE.Basic.Excitation_systems.Logic.Summator_4 summator_4_1
+  Logic.Summator_4 summator_4_1
     annotation (Placement(transformation(extent={{34,10},{50,44}})));
-  LEPSE.Basic.Excitation_systems.Logic.Summator_2 summator_2_1
+  Logic.Summator_2 summator_2_1
     annotation (Placement(transformation(extent={{-18,36},{2,56}})));
 equation
   connect(dfsys_pin, FrequencyBlockD.inp) annotation (points=[-91, 10; -

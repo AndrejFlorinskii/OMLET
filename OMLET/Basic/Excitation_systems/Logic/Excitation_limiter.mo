@@ -1,4 +1,4 @@
-﻿within ;
+﻿within OMLET.Basic.Excitation_systems.Logic;
 model Excitation_limiter
   parameter Boolean selfExcitation = true "Sign of self‑excitation (dependence on Ut)";
   parameter Real Kemax = 2.0 "Multiplicity of forcing on, p.u.";
@@ -10,16 +10,17 @@ model Excitation_limiter
   Real Ut_val;
 
 public
-  LEPSE.Interfaces.Signal_pin Ut_pin annotation (
+  Interfaces.Signal_pin Ut_pin annotation (
     extent=[-92,-10; -72,10],
     layer="icon",
-    Placement(transformation(extent={{-30,-70},{-10,-50}}, rotation=0),
+    Placement(transformation(extent={{-30,-70},{-10,-50}},rotation=0),
         iconTransformation(extent={{-30,-70},{-10,-50}})));
 public
-  LEPSE.Interfaces.Signal_pin Er0_pin annotation (
+  Interfaces.Signal_pin Er0_pin
+                               annotation (
     extent=[-92,-10; -72,10],
     layer="icon",
-    Placement(transformation(extent={{12,-70},{32,-50}}, rotation=0),
+    Placement(transformation(extent={{12,-70},{32,-50}},  rotation=0),
         iconTransformation(extent={{10,-70},{30,-50}})));
 equation
    // 1. Учет схемы питания (самовозбуждение от шин генератора)
@@ -40,15 +41,15 @@ equation
   Er0_pin.Signal = Er0_val;
 
 public
-  LEPSE.Interfaces.Signal_pin inp annotation (
+  Interfaces.Signal_pin       inp annotation (
     extent=[-92,-10; -72,10],
     layer="icon",
-    Placement(transformation(extent={{-110,-10},{-90,10}}, rotation=0),
+    Placement(transformation(extent={{-110,-10},{-90,10}},rotation=0),
         iconTransformation(extent={{-110,-10},{-90,10}})));
-  LEPSE.Interfaces.Signal_pin out annotation (
+  Interfaces.Signal_pin       out annotation (
     extent=[70,-10; 90,10],
     layer="icon",
-    Placement(transformation(extent={{90,-10},{110,10}}, rotation=0),
+    Placement(transformation(extent={{90,-10},{110,10}},rotation=0),
         iconTransformation(extent={{90,-10},{110,10}})));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
         Rectangle(

@@ -1,4 +1,4 @@
-﻿within ;
+﻿within OMLET.Basic.Excitation_systems.Logic;
 model Delayed_Derivative
   parameter Real t1 = 0.02 "Time delay (sec)";
 
@@ -7,10 +7,10 @@ model Delayed_Derivative
   Real y "Выходной сигнал (производная)";
 
 public
-  LEPSE.Interfaces.Signal_pin inp annotation (
-    Placement(transformation(extent={{-110,-10},{-90,10}})));
-  LEPSE.Interfaces.Signal_pin out annotation (
-    Placement(transformation(extent={{90,-10},{110,10}})));
+  OMLET.Interfaces.Signal_pin inp
+    annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
+  OMLET.Interfaces.Signal_pin out
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 
 equation
   u = inp.Signal;

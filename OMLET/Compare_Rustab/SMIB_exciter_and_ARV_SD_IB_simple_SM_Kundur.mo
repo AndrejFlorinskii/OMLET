@@ -5,7 +5,7 @@ model SMIB_exciter_and_ARV_SD_IB_simple_SM_Kundur
   parameter Boolean globalDisplay_U = true;
   parameter Boolean globalDisplay_S = true;
 
-  OMLET.Basic.Generators.Numerical_units.Infinite_bus_simple IB(
+  OMLET.Basic.Generators.Infinite_bus_simple IB(
     Mtmax=1.1,
     Mtmin=-1.1,
     Ut=330,
@@ -23,7 +23,7 @@ model SMIB_exciter_and_ARV_SD_IB_simple_SM_Kundur
     Tj_p=500,
     G(Pg(start=-495.3849792480469), Qgen(start=-70.46939086914062)),
     TregOff=9) annotation (Placement(transformation(extent={{98,-6},{68,26}})));
-  OMLET.Basic.Transformers.Transformers_numerical_units.Transformer Transformer(
+  OMLET.Basic.Transformers.Transformer Transformer(
     Sbaz=Transformer.sysData.Sbaz,
     n_step=0,
     Rtrans=0.8,
@@ -33,7 +33,7 @@ model SMIB_exciter_and_ARV_SD_IB_simple_SM_Kundur
     I2d(start=0.01497831754386425),
     I2q(start=0.49274519085884094))
     annotation (Placement(transformation(extent={{-36,-6},{-10,24}})));
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_1(
+  OMLET.Basic.Branches.HVline Line_1(
     Rline=2.5,
     Xline=29,
     Bline1=170,
@@ -59,14 +59,14 @@ model SMIB_exciter_and_ARV_SD_IB_simple_SM_Kundur
     Ubaz=330,
     fbaz=50)
     annotation (Placement(transformation(extent={{-78,-44},{-58,-24}})));
-  OMLET.Basic.Shunts.Shunts_numerical_units.ShortCircuitShunt SCS(
+  OMLET.Basic.Shunts.ShortCircuitShunt SCS(
     Bn=100000,
     Gn=100000,
     TkzOn=10,
     dTkzOn=0.2)
     annotation (Placement(transformation(extent={{-18,-42},{0,-18}})));
 
-  OMLET.Basic.Generators.Numerical_units.SM_with_exciter_and_AVR_SD G(
+  OMLET.Basic.Generators.SM_with_exciter_and_AVR_SD G(
     TregOff=9,
     Kemax=2.5,
     Kemin=-2,
@@ -116,7 +116,7 @@ model SMIB_exciter_and_ARV_SD_IB_simple_SM_Kundur
     Tauc=0.08,
     G(id(start=-0.40969958901405334), iq(start=0.2738809287548065)))
     annotation (Placement(transformation(extent={{-98,-6},{-52,26}})));
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_2(
+  OMLET.Basic.Branches.HVline Line_2(
     Rline=2.5,
     Xline=29,
     Bline1=170,

@@ -3,7 +3,7 @@ model IB_Load
   parameter Boolean globalDisplay_U = true;
   parameter Boolean globalDisplay_S = true;
 
-  OMLET.Basic.Generators.Numerical_units.Infinite_bus_simple IB(
+  OMLET.Basic.Generators.Infinite_bus_simple IB(
     Mtmax=1.1,
     Mtmin=-1.1,
     Ut=330,
@@ -24,7 +24,7 @@ model IB_Load
       Ut=340,
       Qgen(start=-0.7352029085159302)))
     annotation (Placement(transformation(extent={{98,-6},{68,26}})));
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_1(
+  OMLET.Basic.Branches.HVline Line_1(
     Rline=2.5,
     Xline=29,
     Bline1=170,
@@ -48,14 +48,14 @@ model IB_Load
     Ubaz=330,
     fbaz=50)
     annotation (Placement(transformation(origin={40,20},   extent = {{-100, -64}, {-80, -44}})));
-  OMLET.Basic.Shunts.Shunts_numerical_units.ShortCircuitShunt SCS(
+  OMLET.Basic.Shunts.ShortCircuitShunt SCS(
     Bn=100000,
     Gn=100000,
     TkzOn=10,
     dTkzOn=0.2)
     annotation (Placement(transformation(extent={{-24,-38},{-6,-14}})));
 
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_2(
+  OMLET.Basic.Branches.HVline Line_2(
     Rline=2.5,
     Xline=29,
     Bline1=170,
@@ -66,8 +66,8 @@ model IB_Load
     Idc2(start=0.0184503011405468),
     Iqc2(start=-0.0004121930687688291))
     annotation (Placement(transformation(extent={{14,-46},{40,-10}})));
-  OMLET.Basic.Shunts.Shunts_numerical_units.Constant_Conductivity_Load Load(Pn=1100,
-      Qn=110) annotation (Placement(transformation(extent={{-48,-12},{-28,8}})));
+  OMLET.Basic.Shunts.Constant_Conductivity_Load Load(Pn=1100, Qn=110)
+    annotation (Placement(transformation(extent={{-48,-12},{-28,8}})));
 equation
 
   IB.G.DeltaIJ = 0;

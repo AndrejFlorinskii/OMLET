@@ -1,31 +1,30 @@
-﻿within Turbines;
+﻿within OMLET.Basic.Turbines;
 model ASR_Regulator_IB
 
   parameter Real Sigma=0.0475 "Slip deviation control coefficient";
   parameter Real Tauc=0.15 "Slip deviation time constant";
 
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function SlipDeviation(b={-1/
-        Sigma}, a={Tauc,1}) annotation (extent=[-74,57.3333; -27.3333,104],
-      Placement(transformation(extent={{-64,-32},{-11.3333,16}}, rotation=0)));
-  LEPSE.Interfaces.Signal_pin ds_pin annotation (
+  Excitation_systems.Logic.Transfer_Function SlipDeviation(b={-1/Sigma},
+      a={Tauc,1}) annotation (extent=[-74,57.3333; -27.3333,104],
+      Placement(transformation(extent={{-64,-32},{-11.3333,16}}, rotation
+          =0)));
+  OMLET.Interfaces.Signal_pin ds_pin annotation (
     extent=[-96,64; -86,76],
     layer="icon",
-    Placement(transformation(extent={{-106,-14},{-96,-2}},
-                                                         rotation=0),
+    Placement(transformation(extent={{-106,-14},{-96,-2}}, rotation=0),
         iconTransformation(extent={{-106,-14},{-96,-2}})));
-  LEPSE.Interfaces.Signal_pin out_pin annotation (
+  OMLET.Interfaces.Signal_pin out_pin annotation (
     extent=[86,2; 96,22],
     layer="icon",
-    Placement(transformation(extent={{134,-10},{144,10}},
-                                                        rotation=0),
+    Placement(transformation(extent={{134,-10},{144,10}}, rotation=0),
         iconTransformation(extent={{134,-10},{144,10}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function SlipI_Dif(b={1}, a={1,
-        0}) annotation (Placement(transformation(extent={{10,-28},{66,12}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function Slip_Prop(b={1}, a={1})
+  Excitation_systems.Logic.Transfer_Function SlipI_Dif(b={1}, a={1,0})
+    annotation (Placement(transformation(extent={{10,-28},{66,12}})));
+  Excitation_systems.Logic.Transfer_Function Slip_Prop(b={1}, a={1})
     annotation (Placement(transformation(extent={{10,-68},{66,-28}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function Slip_Int(b={1,0}, a={1,
-        1}) annotation (Placement(transformation(extent={{10,12},{66,52}})));
-  LEPSE.Basic.Excitation_systems.Logic.Summator_3 summator_3_1
+  Excitation_systems.Logic.Transfer_Function Slip_Int(b={1,0}, a={1,1})
+    annotation (Placement(transformation(extent={{10,12},{66,52}})));
+  Excitation_systems.Logic.Summator_3 summator_3_1
     annotation (Placement(transformation(extent={{92,-18},{112,2}})));
 
 equation

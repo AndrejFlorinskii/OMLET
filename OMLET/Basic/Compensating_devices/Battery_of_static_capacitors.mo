@@ -1,6 +1,6 @@
-﻿within ;
+﻿within OMLET.Basic.Compensating_devices;
 model Battery_of_static_capacitors
- outer LEPSE.Basic.SysData sysData;
+ outer SysData sysData;
 
   parameter Boolean inService = true "Battery topological condition";
 
@@ -22,10 +22,10 @@ model Battery_of_static_capacitors
   Real Idc "Q-axis current of battery";
   Real Pc_fact "Active power of battery fact";
   Real Qc_fact "Reactive power of battery fact";
-  LEPSE.Interfaces.Pin_v2 inp annotation (
+  OMLET.Interfaces.Pin_v2 inp annotation (
     extent=[-10,76; 10,96],
     layer="icon",
-    Placement(transformation(extent={{-10,88},{10,108}},rotation=0),
+    Placement(transformation(extent={{-10,88},{10,108}}, rotation=0),
         iconTransformation(extent={{-10,88},{10,108}})));
 initial equation
   // calculating conductivity from power

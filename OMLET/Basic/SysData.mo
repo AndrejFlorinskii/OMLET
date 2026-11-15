@@ -1,4 +1,4 @@
-﻿within Basic;
+﻿within OMLET.Basic;
 model SysData
   parameter Real Sbaz = 1000 "Bazic power, MWA";
   parameter Real Ubaz = 20 "Basic voltage, kV";
@@ -9,7 +9,7 @@ model SysData
     Icon(
       coordinateSystem(extent={{-100,-100},{100,100}}),
       graphics={
-        Rectangle(extent={{-100,60},{100,-60}}, lineColor={0,0,255}, fillColor={220,220,255}, fillPattern=FillPattern.Solid),
+        Rectangle(extent={{-100,62},{100,-60}}, lineColor={0,0,255}, fillColor={220,220,255}, fillPattern=FillPattern.Solid),
                 Text(
           textString= String(Sbaz, significantDigits=5) + " MW",
           extent={{-98,38},{100,0}},

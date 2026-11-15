@@ -1,4 +1,4 @@
-﻿within ;
+﻿within OMLET.Basic.Excitation_systems.Logic;
 model Transfer_Function
   parameter Real b[:]={1}
   "Numerator coefficients of transfer function.";
@@ -23,15 +23,15 @@ protected
   "output variable";
 
 public
-  LEPSE.Interfaces.Signal_pin inp annotation (
+  OMLET.Interfaces.Signal_pin inp annotation (
     extent=[-92,-10; -72,10],
     layer="icon",
-    Placement(transformation(extent={{-110,-10},{-90,10}},rotation=0),
+    Placement(transformation(extent={{-110,-10},{-90,10}}, rotation=0),
         iconTransformation(extent={{-110,-10},{-90,10}})));
-  LEPSE.Interfaces.Signal_pin out annotation (
+  OMLET.Interfaces.Signal_pin out annotation (
     extent=[70,-10; 90,10],
     layer="icon",
-    Placement(transformation(extent={{90,-10},{110,10}},rotation=0),
+    Placement(transformation(extent={{90,-10},{110,10}}, rotation=0),
         iconTransformation(extent={{90,-10},{110,10}})));
 equation
   [der(x); xn] = [x1dot; x];

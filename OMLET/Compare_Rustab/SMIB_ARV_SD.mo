@@ -5,7 +5,7 @@ model SMIB_ARV_SD
   parameter Boolean globalDisplay_U = true;
   parameter Boolean globalDisplay_S = true;
 
-  OMLET.Basic.Generators.Numerical_units.SM_with_AVR_SD G1(
+  OMLET.Basic.Generators.SM_with_AVR_SD G1(
     TregOff=0,
     Kemax=2.5,
     Kemin=-2,
@@ -46,14 +46,15 @@ model SMIB_ARV_SD
     Tforcedelay=0,
     cosfi_nom=0.8,
     displayPowerFlow=globalDisplay_S,
-    G(ud(start=-0.033826773074383566),
+    G(
+      ud(start=-0.033826773074383566),
       uq(start=1.020381381777528),
       Qg(start=71.82930755615234)),
     fbaz=sysData.fbaz,
     pq_table=OMLET.Data.TVV_500_2,
     inService=true)
     annotation (Placement(transformation(extent={{-102,-6},{-62,26}})));
-  OMLET.Basic.Generators.Numerical_units.Infinite_bus G2(
+  OMLET.Basic.Generators.Infinite_bus G2(
     ASC_Regulator_1(SlipDeviation(x(start={0.009356128051877022})), SlipI_Dif(x(
             start={-5997.04833984375}))),
     AVR(
@@ -83,7 +84,7 @@ model SMIB_ARV_SD
     G(Pg(start=-495.3849792480469), Qg(start=-70.48245239257812)),
     Qmax=9999,
     Qmin=-9999) annotation (Placement(transformation(extent={{96,-6},{66,26}})));
-  OMLET.Basic.Transformers.Transformers_numerical_units.Transformer Transformer_NU1(
+  OMLET.Basic.Transformers.Transformer Transformer_NU1(
     Sbaz=Transformer_NU1.sysData.Sbaz,
     n_step=0,
     Rtrans=0.8,
@@ -93,7 +94,7 @@ model SMIB_ARV_SD
     I2d(start=0.11196201294660568),
     I2q(start=0.4793854355812073))
     annotation (Placement(transformation(extent={{-36,-6},{-10,24}})));
-  OMLET.Basic.Branches.Branches_numerical_units.HVline HVline_NU1(
+  OMLET.Basic.Branches.HVline HVline_NU1(
     Rline=2.5,
     Xline=29,
     Bline1=170,
@@ -112,7 +113,7 @@ model SMIB_ARV_SD
     Ubaz=330,
     fbaz=50)
     annotation (Placement(transformation(extent={{-100,-64},{-80,-44}})));
-  OMLET.Basic.Shunts.Shunts_numerical_units.ShortCircuitShunt shortCircuitShunt_NU(
+  OMLET.Basic.Shunts.ShortCircuitShunt shortCircuitShunt_NU(
     Umon=330,
     Bn=1000,
     Gn=1000,
@@ -120,7 +121,7 @@ model SMIB_ARV_SD
     dTkzOn=0.2)
     annotation (Placement(transformation(extent={{-18,-38},{0,-14}})));
 
-  OMLET.Basic.Branches.Branches_numerical_units.HVline HVline_NU2(
+  OMLET.Basic.Branches.HVline HVline_NU2(
     Rline=2.5,
     Xline=29,
     Bline1=170,

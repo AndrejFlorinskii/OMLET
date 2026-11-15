@@ -1,4 +1,4 @@
-﻿within ;
+﻿within OMLET.Basic.Excitation_systems.Logic;
 model logical_switch
   parameter Real a1 "Uforc, Voltage of field forcing input";
   parameter Real a2 "Udeforc, Voltage of field forcing removing";
@@ -6,18 +6,17 @@ model logical_switch
   parameter Real a4 "Tforcedelay, Delay of field forcing removing";
   Real T_force_on "moment of time, when forcing starts";
 
-  LEPSE.Interfaces.Signal_pin inp1 annotation (
+  OMLET.Interfaces.Signal_pin inp1 annotation (
     extent=[-94,14; -74,66],
     layer="icon",
     Placement(transformation(extent={{-110,8},{-90,60}}, rotation=0),
         iconTransformation(extent={{-110,8},{-90,60}})));
-  LEPSE.Interfaces.Signal_pin inp2 annotation (
+  OMLET.Interfaces.Signal_pin inp2 annotation (
     extent=[-94,-66; -74,-14],
     layer="icon",
-    Placement(transformation(extent={{-110,-62},{-90,-10}},
-                                                          rotation=0),
+    Placement(transformation(extent={{-110,-62},{-90,-10}}, rotation=0),
         iconTransformation(extent={{-110,-62},{-90,-10}})));
-  LEPSE.Interfaces.Signal_pin inp2inf annotation (
+  OMLET.Interfaces.Signal_pin inp2inf annotation (
     extent=[-94,-66; -74,-14],
     layer="icon",
     Placement(transformation(
@@ -27,14 +26,14 @@ model logical_switch
         extent={{-10,-26},{10,26}},
         rotation=90,
         origin={2,-118})));
-  LEPSE.Interfaces.Signal_pin out annotation (
+  OMLET.Interfaces.Signal_pin out annotation (
     extent=[74,-26; 94,26],
     layer="icon",
-    Placement(transformation(extent={{90,-34},{110,18}},rotation=0),
+    Placement(transformation(extent={{90,-34},{110,18}}, rotation=0),
         iconTransformation(extent={{90,-34},{110,18}})));
-  LEPSE.Interfaces.Signal_pin inp1inf annotation (Placement(transformation(
-          extent={{-24,110},{26,130}}), iconTransformation(extent={{-24,110},{
-            26,130}})));
+  Interfaces.Signal_pin inp1inf annotation (Placement(transformation(extent={{-24,110},
+            {26,130}}),          iconTransformation(extent={{-24,110},{26,
+            130}})));
 
 initial equation
   pre(T_force_on) = 0;

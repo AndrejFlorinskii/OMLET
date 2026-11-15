@@ -5,7 +5,7 @@ model SMIB_exciter_and_ARV_SD
   parameter Boolean globalDisplay_U = true;
   parameter Boolean globalDisplay_S = true;
 
-  OMLET.Basic.Generators.Numerical_units.Infinite_bus G2(
+  OMLET.Basic.Generators.Infinite_bus G2(
     Mtmin=-1.1,
     Ut=330,
     Xd_p=0.5,
@@ -41,7 +41,7 @@ model SMIB_exciter_and_ARV_SD
     inp(Vq(start=0.973314642906189)),
     cosfi_nom=0.9,
     Tokp=0.09) annotation (Placement(transformation(extent={{96,-6},{66,26}})));
-  OMLET.Basic.Transformers.Transformers_numerical_units.Transformer Transformer(
+  OMLET.Basic.Transformers.Transformer Transformer(
     Sbaz=Transformer.sysData.Sbaz,
     n_step=0,
     Rtrans=0.8,
@@ -51,7 +51,7 @@ model SMIB_exciter_and_ARV_SD
     I2d(start=0.14272548258304596),
     I2q(start=0.4717901647090912))
     annotation (Placement(transformation(extent={{-36,-6},{-10,24}})));
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_1(
+  OMLET.Basic.Branches.HVline Line_1(
     Rline=2.5,
     Xline=29,
     Bline1=170,
@@ -75,14 +75,14 @@ model SMIB_exciter_and_ARV_SD
     Ubaz=330,
     fbaz=50)
     annotation (Placement(transformation(extent={{-100,-64},{-80,-44}})));
-  OMLET.Basic.Shunts.Shunts_numerical_units.ShortCircuitShunt shortCircuitShunt_NU(
+  OMLET.Basic.Shunts.ShortCircuitShunt shortCircuitShunt_NU(
     Bn=100000,
     Gn=100000,
     TkzOn=10,
     dTkzOn=0.2)
     annotation (Placement(transformation(extent={{-18,-42},{0,-18}})));
 
-  OMLET.Basic.Generators.Numerical_units.SM_with_exciter_and_AVR_SD G1(
+  OMLET.Basic.Generators.SM_with_exciter_and_AVR_SD G1(
     TregOff=100,
     Kemax=2.5,
     Kemin=-2,
@@ -122,7 +122,7 @@ model SMIB_exciter_and_ARV_SD
     selfExcitation=true,
     exciter(Excitation_delay(x(start={1.4260011911392212}))))
     annotation (Placement(transformation(extent={{-104,-6},{-58,26}})));
-  OMLET.Basic.Branches.Branches_numerical_units.HVline Line_2(
+  OMLET.Basic.Branches.HVline Line_2(
     Rline=2.5,
     Xline=29,
     Bline1=170,

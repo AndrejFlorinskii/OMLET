@@ -1,10 +1,10 @@
-within Examples;
+within OMLET.Examples;
 model Simple_model_with_IB_and_AT
   Real delta_G1_G2 "Mutual angle";
   parameter Boolean globalDisplay_U = true;
   parameter Boolean globalDisplay_S = true;
 
-  LEPSE.Basic.Generators.Numerical_units.SM_with_AVR G1(
+  Basic.Generators.SM_with_AVR G1(
     AVR(
       K0u=-20,
       K1u=1,
@@ -43,11 +43,11 @@ model Simple_model_with_IB_and_AT
     displayPowerFlow=globalDisplay_S,
     G(ud(start=-0.033826773074383566), uq(start=1.020381381777528)),
     fbaz=sysData.fbaz,
-    pq_table=LEPSE.Data.TVV_500_2) annotation (Placement(transformation(
+    pq_table=OMLET.Data.TVV_500_2) annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-122,10})));
-  LEPSE.Basic.Generators.Numerical_units.Infinite_bus G2(
+  Basic.Generators.Infinite_bus G2(
     ASC_Regulator_1(SlipDeviation(x(start={-4.708469614200794E-09}))),
     AVR(
       ExcitationCurrent(x(start={-3.2290213108062744})),
@@ -73,38 +73,38 @@ model Simple_model_with_IB_and_AT
     Sbaz=sysData.Sbaz,
     fbaz=sysData.fbaz)
     annotation (Placement(transformation(extent={{94,-6},{64,26}})));
-  LEPSE.Basic.Branches.Branches_numerical_units.HVline HVline_NU1(
+  Basic.Branches.HVline HVline_NU1(
     Rline=2.5,
     Xline=29,
     Bline1=170,
     Bline2=170,
     displayPowerFlow=globalDisplay_S)
     annotation (Placement(transformation(extent={{14,-10},{40,26}})));
-  LEPSE.Basic.Shunts.Shunts_numerical_units.Constant_Conductivity_Load Constant_Conductivity_Load_NU(
+  Basic.Shunts.Constant_Conductivity_Load Constant_Conductivity_Load_NU(
     Pn=1000,
     Qn=100,
     displayPowerFlow=globalDisplay_S)
     annotation (Placement(transformation(extent={{44,-36},{68,-12}})));
-  LEPSE.Basic.Buses.Bus node_1(Unom=20, displayVoltage=globalDisplay_U)
+  Basic.Buses.Bus node_1(Unom=20, displayVoltage=globalDisplay_U)
     annotation (Placement(transformation(extent={{-106,-2},{-86,22}})));
-  LEPSE.Basic.Buses.Bus node_3(busNumber=3, displayVoltage=globalDisplay_U)
+  Basic.Buses.Bus node_3(busNumber=3, displayVoltage=globalDisplay_U)
     annotation (Placement(transformation(extent={{38,-2},{58,22}})));
-  LEPSE.Basic.Buses.Bus node_2(busNumber=2, displayVoltage=globalDisplay_U)
+  Basic.Buses.Bus node_2(busNumber=2, displayVoltage=globalDisplay_U)
     annotation (Placement(transformation(extent={{-66,-2},{-46,22}})));
 
-  inner LEPSE.Basic.SysData sysData(
+  inner Basic.SysData sysData(
     Sbaz=1000,
     Ubaz=330,
     fbaz=50)
     annotation (Placement(transformation(extent={{-140,-64},{-120,-44}})));
-  LEPSE.Basic.Shunts.Shunts_numerical_units.ShortCircuitShunt shortCircuitShunt_NU(
+  Basic.Shunts.ShortCircuitShunt shortCircuitShunt_NU(
     Bn=1000,
     Gn=1000,
     TkzOn=40,
     dTkzOn=0.2)
     annotation (Placement(transformation(extent={{2,-46},{20,-22}})));
 
-  LEPSE.Basic.Transformers.Transformers_numerical_units.Transformer transformer_NU(
+  Basic.Transformers.Transformer transformer_NU(
     Sbaz=sysData.Sbaz,
     n_step=2,
     Unom=115,
@@ -114,7 +114,7 @@ model Simple_model_with_IB_and_AT
         extent={{-12,-13},{12,13}},
         rotation=0,
         origin={-76,9})));
-  LEPSE.Basic.Transformers.Transformers_numerical_units.Autotransformer autotransformer(
+  Basic.Transformers.Autotransformer autotransformer(
     n_step=0,
     Unom_HV=340,
     Unom_MV=115,
@@ -127,7 +127,7 @@ model Simple_model_with_IB_and_AT
         extent={{-12,-12},{12,12}},
         rotation=180,
         origin={-26,10})));
-  LEPSE.Basic.Shunts.Shunts_numerical_units.Constant_Conductivity_Load Constant_Conductivity_Load_NU1(
+  Basic.Shunts.Constant_Conductivity_Load Constant_Conductivity_Load_NU1(
     Unom=10,
     Pn=10,
     Qn=1,

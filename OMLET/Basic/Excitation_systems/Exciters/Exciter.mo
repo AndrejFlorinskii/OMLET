@@ -1,4 +1,4 @@
-﻿within ;
+﻿within OMLET.Basic.Excitation_systems.Exciters;
 model Exciter
    //--- Параметры возбудителя ---
   parameter Real Te = 0.02 "Exciter time constant, с";
@@ -11,46 +11,44 @@ model Exciter
 
   //--- Внутренние переменные ---
 
-  LEPSE.Interfaces.Signal_pin Er0_pin annotation (extent=[-90,-8; -70,12],
-      Placement(transformation(extent={{-110,-10},{-90,10}}, rotation=0),
+  Interfaces.Signal_pin Er0_pin annotation (extent=[-90,-8; -70,12], Placement(
+        transformation(extent={{-110,-10},{-90,10}}, rotation=0),
         iconTransformation(extent={{-110,-10},{-90,10}})));
-  LEPSE.Interfaces.Signal_pin dEr_pin annotation (
+  Interfaces.Signal_pin dEr_pin annotation (
     extent=[-60,66; -40,86],
     layer="icon",
     Placement(transformation(extent={{-110,16},{-90,36}}, rotation=0),
         iconTransformation(extent={{-110,16},{-90,36}})));
-  LEPSE.Interfaces.Signal_pin Er_pin annotation (extent=[-90,-8; -70,12],
-      Placement(transformation(extent={{170,-10},{190,10}}, rotation=0),
+  Interfaces.Signal_pin Er_pin annotation (extent=[-90,-8; -70,12], Placement(
+        transformation(extent={{170,-10},{190,10}},rotation=0),
         iconTransformation(extent={{170,-10},{190,10}})));
-  LEPSE.Interfaces.Signal_pin Ut_pin annotation (extent=[-90,-8; -70,12],
-      Placement(transformation(extent={{-110,-34},{-90,-14}}, rotation=0),
+  Interfaces.Signal_pin Ut_pin annotation (extent=[-90,-8; -70,12], Placement(
+        transformation(extent={{-110,-34},{-90,-14}}, rotation=0),
         iconTransformation(extent={{-110,-34},{-90,-14}})));
 
-  LEPSE.Interfaces.Signal_pin dIg_pin annotation (
+  Interfaces.Signal_pin dIg_pin annotation (
     extent=[-60,66; -40,86],
     layer="icon",
     Placement(transformation(extent={{-110,44},{-90,64}}, rotation=0),
         iconTransformation(extent={{-110,42},{-90,62}})));
-  LEPSE.Interfaces.Signal_pin dIf_pin annotation (extent=[-90,-8; -70,12],
-      Placement(transformation(extent={{-110,-64},{-90,-44}}, rotation=0),
+  Interfaces.Signal_pin dIf_pin
+                               annotation (extent=[-90,-8; -70,12], Placement(
+        transformation(extent={{-110,-64},{-90,-44}}, rotation=0),
         iconTransformation(extent={{-110,-64},{-90,-44}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function Excitation_delay(b={1}, a=
-        {Te,1})
+  Logic.Transfer_Function Excitation_delay(b={1}, a={Te,1})
     annotation (Placement(transformation(extent={{52,-22},{100,24}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function Rotor_current_deviation(b={
-        Kif_exc}, a={1})
+  Logic.Transfer_Function Rotor_current_deviation(b={Kif_exc}, a={1})
     annotation (Placement(transformation(extent={{-76,-80},{-12,-28}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function AVR_signal(b={Ku_exc},
-      a={1}) annotation (Placement(transformation(extent={{-76,0},{-12,52}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function Stator_current_deviation(b={
-        Kig_exc}, a={1})
+  Logic.Transfer_Function AVR_signal(b={Ku_exc}, a={1})
+    annotation (Placement(transformation(extent={{-76,0},{-12,52}})));
+  Logic.Transfer_Function Stator_current_deviation(b={Kig_exc}, a={1})
     annotation (Placement(transformation(extent={{-76,28},{-12,80}})));
-  LEPSE.Basic.Excitation_systems.Logic.Excitation_limiter excitation_limiter(
+  Logic.Excitation_limiter excitation_limiter(
     selfExcitation=selfExcitation,
     Kemax=Kemax,
     Kemin=Kemin)
     annotation (Placement(transformation(extent={{112,-20},{154,24}})));
-  LEPSE.Basic.Excitation_systems.Logic.Summator_4 summator_4_1
+  Logic.Summator_4 summator_4_1
     annotation (Placement(transformation(extent={{8,-16},{42,18}})));
 equation
 

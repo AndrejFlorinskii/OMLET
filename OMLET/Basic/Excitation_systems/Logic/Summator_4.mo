@@ -1,29 +1,29 @@
-﻿within ;
+﻿within OMLET.Basic.Excitation_systems.Logic;
 model Summator_4
-  LEPSE.Interfaces.Signal_pin inp1 annotation (
+  OMLET.Interfaces.Signal_pin inp1 annotation (
     extent=[-94,14; -74,66],
     layer="icon",
-    Placement(transformation(extent={{-110,46},{-90,98}},rotation=0),
+    Placement(transformation(extent={{-110,46},{-90,98}}, rotation=0),
         iconTransformation(extent={{-110,46},{-90,98}})));
-  LEPSE.Interfaces.Signal_pin inp2 annotation (
+  OMLET.Interfaces.Signal_pin inp2 annotation (
     extent=[-94,-66; -74,-14],
     layer="icon",
-    Placement(transformation(extent={{-110,0},{-90,52}},   rotation=0),
+    Placement(transformation(extent={{-110,0},{-90,52}}, rotation=0),
         iconTransformation(extent={{-110,0},{-90,52}})));
-  LEPSE.Interfaces.Signal_pin out annotation (
+  OMLET.Interfaces.Signal_pin out annotation (
     extent=[74,-26; 94,26],
     layer="icon",
-    Placement(transformation(extent={{90,-26},{110,26}},rotation=0),
+    Placement(transformation(extent={{90,-26},{110,26}}, rotation=0),
         iconTransformation(extent={{90,-26},{110,26}})));
-  LEPSE.Interfaces.Signal_pin inp3 annotation (
+  Interfaces.Signal_pin       inp3 annotation (
     extent=[-94,-66; -74,-14],
     layer="icon",
-    Placement(transformation(extent={{-110,-46},{-90,6}}, rotation=0),
+    Placement(transformation(extent={{-110,-46},{-90,6}},  rotation=0),
         iconTransformation(extent={{-110,-46},{-90,6}})));
-  LEPSE.Interfaces.Signal_pin inp4 annotation (
+  Interfaces.Signal_pin       inp4 annotation (
     extent=[-94,-66; -74,-14],
     layer="icon",
-    Placement(transformation(extent={{-110,-92},{-90,-40}}, rotation=0),
+    Placement(transformation(extent={{-110,-92},{-90,-40}},rotation=0),
         iconTransformation(extent={{-110,-92},{-90,-40}})));
 equation
   // the sum of 2 input signals

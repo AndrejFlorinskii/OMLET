@@ -1,11 +1,11 @@
-within Examples;
+within OMLET.Examples;
 model Simple_model_with_IB_simple
   Real delta_G1_G2(start=-0.8181529641151428)
                    "Mutual angle";
   parameter Boolean globalDisplay_U = true;
   parameter Boolean globalDisplay_S = true;
 
-  LEPSE.Basic.Generators.Numerical_units.SM_with_AVR G1(
+  Basic.Generators.SM_with_AVR G1(
     TregOff=50,
     AVR(
       K0u=20,
@@ -48,9 +48,9 @@ model Simple_model_with_IB_simple
       uq(start=1.020381381777528),
       Qg(start=78.32073974609375)),
     fbaz=sysData.fbaz,
-    pq_table=LEPSE.Data.TVV_500_2)
+    pq_table=OMLET.Data.TVV_500_2)
     annotation (Placement(transformation(extent={{-110,-6},{-78,26}})));
-  LEPSE.Basic.Generators.Numerical_units.Infinite_bus G2(
+  Basic.Generators.Infinite_bus G2(
     ASC_Regulator_1(SlipDeviation(x(start={2.3845495771766508E-15})), SlipI_Dif(
           x(start={0.5073677897453308}))),
     Mtmin=-1.1,
@@ -80,9 +80,8 @@ model Simple_model_with_IB_simple
     fbaz=sysData.fbaz,
     G(Pg(start=507.3677978515625), Qg(start=91.8717269897461)),
     Qmax=9999,
-    Qmin=-9999)
-    annotation (Placement(transformation(extent={{126,-6},{96,26}})));
-  LEPSE.Basic.Transformers.Transformers_numerical_units.Transformer Transformer_NU1(
+    Qmin=-9999) annotation (Placement(transformation(extent={{90,-6},{60,26}})));
+  Basic.Transformers.Transformer Transformer_NU1(
     Sbaz=Transformer_NU1.sysData.Sbaz,
     n_step=2,
     Rtrans=0.8,
@@ -92,33 +91,33 @@ model Simple_model_with_IB_simple
     I2d(start=-0.07897039502859116),
     I2q(start=0.5000495910644531))
     annotation (Placement(transformation(extent={{-36,-6},{-10,24}})));
-  LEPSE.Basic.Branches.Branches_numerical_units.HVline HVline_NU1(
+  Basic.Branches.HVline HVline_NU1(
     Rline=2.5,
     Xline=29,
     Bline1=170,
     Bline2=170,
     displayPowerFlow=globalDisplay_S)
     annotation (Placement(transformation(extent={{14,-10},{40,26}})));
-  LEPSE.Basic.Buses.Bus node_1(Unom=20, displayVoltage=globalDisplay_U)
+  Basic.Buses.Bus node_1(Unom=20, displayVoltage=globalDisplay_U)
     annotation (Placement(transformation(extent={{-56,-2},{-36,22}})));
-  LEPSE.Basic.Buses.Bus node_3(busNumber=3, displayVoltage=globalDisplay_U)
+  Basic.Buses.Bus node_3(busNumber=3, displayVoltage=globalDisplay_U)
     annotation (Placement(transformation(extent={{38,-2},{58,22}})));
-  LEPSE.Basic.Buses.Bus bus(busNumber=2, displayVoltage=globalDisplay_U)
+  Basic.Buses.Bus bus(busNumber=2, displayVoltage=globalDisplay_U)
     annotation (Placement(transformation(extent={{-6,-2},{14,22}})));
 
-  inner LEPSE.Basic.SysData sysData(
+  inner Basic.SysData sysData(
     Sbaz=1000,
     Ubaz=330,
     fbaz=50)
     annotation (Placement(transformation(extent={{-100,-64},{-80,-44}})));
-  LEPSE.Basic.Shunts.Shunts_numerical_units.ShortCircuitShunt shortCircuitShunt_NU(
+  Basic.Shunts.ShortCircuitShunt shortCircuitShunt_NU(
     Bn=1000,
     Gn=1000,
     TkzOn=40,
     dTkzOn=0.2)
     annotation (Placement(transformation(extent={{-6,-44},{12,-20}})));
 
-  LEPSE.Basic.Branches.Branches_numerical_units.Breaker breaker(
+  Basic.Branches.Breaker breaker(
     I12d(start=-0.0789467841386795),
     I12q(start=0.5000675320625305),
     Idc2(start=8.748163082827887E-09),
@@ -143,7 +142,7 @@ equation
           {40,10},{48,10},{48,9.12},{47.875,9.12}},
                                                 color={28,108,200}));
   connect(node_3.bus_pin, G2.inp) annotation (Line(points={{47.875,9.12},{
-          47.875,10},{96,10}},
+          47.875,10},{60,10}},
                         color={28,108,200}));
   connect(Transformer_NU1.out, bus.bus_pin) annotation (Line(points={{-10,
           9.75},{-10,9.12},{3.875,9.12}},

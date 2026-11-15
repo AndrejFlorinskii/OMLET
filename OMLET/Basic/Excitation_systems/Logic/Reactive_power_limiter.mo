@@ -1,4 +1,4 @@
-﻿within ;
+﻿within OMLET.Basic.Excitation_systems.Logic;
 model Reactive_power_limiter
   input Real Qgen;
   input Real Qmax;
@@ -12,15 +12,15 @@ equation
   then 0 else inp.Signal else inp.Signal;
 
 public
-  LEPSE.Interfaces.Signal_pin inp annotation (
+  Interfaces.Signal_pin       inp annotation (
     extent=[-92,-10; -72,10],
     layer="icon",
-    Placement(transformation(extent={{-110,-10},{-90,10}}, rotation=0),
+    Placement(transformation(extent={{-110,-10},{-90,10}},rotation=0),
         iconTransformation(extent={{-110,-10},{-90,10}})));
-  LEPSE.Interfaces.Signal_pin out annotation (
+  Interfaces.Signal_pin       out annotation (
     extent=[70,-10; 90,10],
     layer="icon",
-    Placement(transformation(extent={{90,-10},{110,10}}, rotation=0),
+    Placement(transformation(extent={{90,-10},{110,10}},rotation=0),
         iconTransformation(extent={{90,-10},{110,10}})));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
         Rectangle(

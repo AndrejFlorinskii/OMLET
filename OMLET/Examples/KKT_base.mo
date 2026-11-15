@@ -1,4 +1,4 @@
-﻿within Examples;
+﻿within OMLET.Examples;
 model KKT_base
   Real delta_G07_G01(start=-1.2780330181121826),
        delta_G13_G01(start=-0.5716190934181213),
@@ -11,431 +11,6 @@ model KKT_base
        delta_G54_G01(start=-0.7352678179740906)
                                "Mutual angles";
 
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0102(
-    Rline=0.0274,
-    Xline=0.1876,
-    Bline1=0.01305,
-    Bline2=0.01305)
-    annotation (Placement(transformation(extent={{-16,6},{4,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0103(
-    Rline=100000,
-    Xline=100000,
-    Bline1=1e-006,
-    Bline2=1e-006)
-    annotation (Placement(transformation(extent={{-4,34},{16,54}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0203(
-    Rline=0.879,
-    Xline=0.6,
-    Bline1=0.0417,
-    Bline2=0.0417)
-    annotation (Placement(transformation(extent={{14,6},{34,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0304(
-    Rline=0.0228,
-    Xline=0.1787,
-    Bline1=0.05,
-    Bline2=0.05)
-    annotation (Placement(transformation(extent={{50,6},{70,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0405(
-    Rline=0.0296,
-    Xline=0.2313,
-    Bline1=0.06535,
-    Bline2=0.06535)
-    annotation (Placement(transformation(extent={{92,6},{112,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0506(
-    Rline=0.212,
-    Xline=0.1486,
-    Bline1=0.04295,
-    Bline2=0.04295)
-    annotation (Placement(transformation(extent={{142,6},{162,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0607(
-    Rline=0.0157,
-    Xline=0.1102,
-    Bline1=0.03185,
-    Bline2=0.03185)
-    annotation (Placement(transformation(extent={{216,6},{236,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0708(
-    Rline=0.0279,
-    Xline=0.1679,
-    Bline1=0.012,
-    Bline2=0.012) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={242,-8})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0709_1(
-    Rline=0.0122,
-    Xline=0.0981,
-    Bline1=0.02875,
-    Bline2=0.02875,
-    TLineOff=100.44,
-    dTLineOff=4.5,
-    Koff=100000)
-    annotation (Placement(transformation(extent={{254,6},{274,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0910(
-    Rline=0.0138,
-    Xline=0.0829,
-    Bline1=0.0059,
-    Bline2=0.0059)
-    annotation (Placement(transformation(extent={{282,6},{302,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L1011(
-    Rline=0.0446,
-    Xline=0.2689,
-    Bline1=0.0192,
-    Bline2=0.0192)
-    annotation (Placement(transformation(extent={{314,6},{334,26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L1112(
-    Rline=0.0048,
-    Xline=0.0452,
-    Bline1=0.00325,
-    Bline2=0.00325)
-    annotation (Placement(transformation(extent={{410,8},{430,28}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L1213(
-    Rline=0.0322,
-    Xline=0.2799,
-    Bline1=0.0202,
-    Bline2=0.0202)
-    annotation (Placement(transformation(extent={{442,8},{462,28}})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N01(Gn=
-        51.8, Bn=-24.69) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-40,-2})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N03(Gn=0,
-      Bn=-0.0883) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={64,50})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N07(Gn=
-        0.11, Bn=-0.0047) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={244,72})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N08(Gn=
-        0.0006, Bn=-0.002) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={290,-24})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N09(Gn=0.0,
-      Bn=0.0007) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={278,56})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N10(Gn=
-        0.0867, Bn=-0.04) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={308,56})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N13(Gn=
-        0.0001, Bn=-0.0001) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={494,42})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0121(Rline=
-        0.0049, Xline=0.1946) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-26,-16})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0222(Rline=
-        0.101, Xline=0.3857) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={10,-16})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0323(Rline=
-        0.0035, Xline=0.1356) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={38,-16})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L2122(
-    Rline=0.1,
-    Xline=0.5934,
-    Bline1=0.0054,
-    Bline2=0.0054)
-    annotation (Placement(transformation(extent={{-20,-46},{0,-26}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L2223(
-    Rline=0.3089,
-    Xline=1.7297,
-    Bline1=0.01585,
-    Bline2=0.01585)
-    annotation (Placement(transformation(extent={{12,-46},{32,-26}})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0424(Rline=
-        0.0055, Xline=0.2043) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={92,-4})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T2351(Rline=
-        0.0125, Xline=0.3456) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={48,-46})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L5152(
-    Rline=1.1919,
-    Xline=2.7983,
-    Bline1=0.0046,
-    Bline2=0.0046)
-    annotation (Placement(transformation(extent={{66,-60},{86,-40}})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T2452(Rline=
-        0.0123, Xline=0.4493) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={92,-30})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N51(Gn=
-        0.07, Bn=-0.0562) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={62,-64})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N52(Gn=
-        0.0115, Bn=0.0049) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={92,-64})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0631(Rline=
-        0.0099, Xline=0.3901) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={190,2})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3132(
-    Rline=0.001,
-    Xline=0.001,
-    Bline1=0.0005,
-    Bline2=0.0005) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={172,-20})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T3253(Rline=
-        0.011, Xline=0.5216) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={152,-56})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L5253(
-    Rline=3.6794,
-    Xline=8.1367,
-    Bline1=0.00565,
-    Bline2=0.00565)
-    annotation (Placement(transformation(extent={{110,-62},{130,-42}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L5354(
-    Rline=0.3285,
-    Xline=0.655,
-    Bline1=0.0018,
-    Bline2=0.0018)
-    annotation (Placement(transformation(extent={{158,-110},{178,-90}})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N53(Gn=
-        0.025, Bn=-0.0114)
-    annotation (Placement(transformation(extent={{156,-90},{176,-70}})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N23(Gn=
-        0.0123, Bn=0.0164) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={36,-66})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N21(Gn=0.0,
-      Bn=0.0164) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-28,-62})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N22(Gn=
-        0.128, Bn=-0.0513) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={8,-62})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N24(Gn=
-        0.151, Bn=-0.0354) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={62,-16})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3234(
-    Rline=0.3015,
-    Xline=1.0723,
-    Bline1=0.00195,
-    Bline2=0.00195) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={194,-48})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3233(
-    Rline=0.2311,
-    Xline=1.0116,
-    Bline1=0.00175,
-    Bline2=0.00175) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={194,-64})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3334(
-    Rline=0.74,
-    Xline=1.959,
-    Bline1=0.0034,
-    Bline2=0.0034) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={238,-64})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N33(Gn=
-        0.0036, Bn=0.001)
-    annotation (Placement(transformation(extent={{214,-90},{234,-70}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3438(
-    Rline=0.3209,
-    Xline=0.8665,
-    Bline1=0.00595,
-    Bline2=0.00595) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={304,-56})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3536(
-    Rline=0.0392,
-    Xline=0.2201,
-    Bline1=0.0021,
-    Bline2=0.0021) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={274,-94})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L5455(
-    Rline=0.571,
-    Xline=1.2117,
-    Bline1=0.00345,
-    Bline2=0.00345) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={216,-154})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T3655(Rline=
-        0.0135, Xline=0.342) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={264,-142})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N54(Gn=
-        0.13, Bn=-0.0296)
-    annotation (Placement(transformation(extent={{176,-186},{196,-166}})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N55(Gn=
-        0.06, Bn=-0.0039)
-    annotation (Placement(transformation(extent={{232,-188},{252,-168}})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N36(Gn=
-        0.145, Bn=-0.0641) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={288,-158})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N35(Gn=
-        0.0796, Bn=-0.0512) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={298,-74})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0835(Rline=
-        0.0045, Xline=0.1913) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={272,-42})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3639(
-    Rline=0.0603,
-    Xline=0.3032,
-    Bline1=0.0058,
-    Bline2=0.0058) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={316,-90})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N34(Gn=
-        0.023, Bn=-0.0142) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={252,-76})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3839(
-    Rline=0.021,
-    Xline=0.0156,
-    Bline1=0.00015,
-    Bline2=0.00015) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={372,-64})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3738(
-    Rline=0.0013,
-    Xline=0.0131,
-    Bline1=0.00005,
-    Bline2=0.00005) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={372,-22})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3739(
-    Rline=0.0059,
-    Xline=0.0439,
-    Bline1=0.00015,
-    Bline2=0.00015) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={342,-26})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0937(Rline=
-        0.0027, Xline=0.1004) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={308,-6})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3840(
-    Rline=0.4373,
-    Xline=1.0875,
-    Bline1=0.0079,
-    Bline2=0.0079) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={386,-46})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T1140(Rline=
-        0.0044, Xline=0.1894) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={404,-8})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N37(Gn=
-        0.0055, Bn=-0.01) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={380,10})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N38(Gn=
-        0.0474, Bn=-0.0189) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={354,-66})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N39(Gn=
-        0.05, Bn=-0.0103) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={338,-112})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N40(Gn=
-        0.05, Bn=-0.0211) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={404,-74})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N42(Gn=
-        0.057, Bn=-0.03) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={438,-72})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N44(Gn=
-        0.013, Bn=-0.03) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={470,-76})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L4042(
-    Rline=0.0455,
-    Xline=0.1556,
-    Bline1=0.0012,
-    Bline2=0.0012) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={420,-46})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L4244(
-    Rline=0.8606,
-    Xline=2.8247,
-    Bline1=0.00575,
-    Bline2=0.00575) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={454,-46})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L4445(
-    Rline=0.0468,
-    Xline=0.1657,
-    Bline1=0.0012,
-    Bline2=0.0012) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={486,-46})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T1345(Rline=
-        0.0052, Xline=0.1903) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={490,4})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T1242(Rline=
-        0.009, Xline=0.3966) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={436,-8})));
   Submodel3 G54(G54_Regulator(
       ExcitationCurrent(x(start={-0.023175831884145737})),
       FrequencyBlockD(x(start={0.47270649671554565})),
@@ -560,211 +135,134 @@ model KKT_base
         rotation=0,
         extent={{-17,-16},{17,16}},
         origin={431,68})));
-  LEPSE.Basic.Shunts.Shunts_per_units.Constant_Conductivity_Load N11(Gn=0.0,
-      Bn=-0.01) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={404,56})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T4344(Rline=
-        0.0135, Xline=0.4959) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={496,-76})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T1314(Rline=
-        0.0106, Xline=0.4067) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={472,50})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T0715(Rline=
-        0.0016, Xline=0.0013) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={218,50})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T3646(Rline=
-        0.0131, Xline=0.4179) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={304,-130})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L3347(
-    Rline=0.0472,
-    Xline=0.7569,
-    Bline1=0.0,
-    Bline2=0.0) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={210,-98})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T4853(Rline=
-        0.0321, Xline=0.6775) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={128,-110})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T1623(Rline=
-        0.0526, Xline=0.8401) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={22,-74})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T1724(Rline=
-        0.0285, Xline=1.0535) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={112,-14})));
-  LEPSE.Interfaces.Node node_1 annotation (Placement(transformation(extent=
-            {{-30,18},{-24,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_1 annotation (Placement(transformation(extent={{
+            -30,18},{-24,24}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_2 annotation (Placement(transformation(extent=
-            {{6,18},{12,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_2 annotation (Placement(transformation(extent={{
+            6,18},{12,24}}), iconTransformation(extent={{-120,-100},{-100,-80}})));
+  OMLET.Interfaces.Node node_3 annotation (Placement(transformation(extent={{
+            36,18},{42,24}}), iconTransformation(extent={{-120,-100},{-100,-80}})));
+  OMLET.Interfaces.Node node_4 annotation (Placement(transformation(extent={{
+            74,18},{80,24}}), iconTransformation(extent={{-120,-100},{-100,-80}})));
+  OMLET.Interfaces.Node node_5 annotation (Placement(transformation(extent={{
+            124,18},{130,24}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_3 annotation (Placement(transformation(extent=
-            {{36,18},{42,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_6 annotation (Placement(transformation(extent={{
+            186,18},{192,24}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_4 annotation (Placement(transformation(extent=
-            {{74,18},{80,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_7 annotation (Placement(transformation(extent={{
+            242,18},{248,24}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_5 annotation (Placement(transformation(extent=
-            {{124,18},{130,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_8 annotation (Placement(transformation(extent={{
+            262,-28},{268,-22}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_6 annotation (Placement(transformation(extent=
-            {{186,18},{192,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_9 annotation (Placement(transformation(extent={{
+            274,18},{280,24}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_7 annotation (Placement(transformation(extent=
-            {{242,18},{248,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_10 annotation (Placement(transformation(extent={
+            {304,18},{310,24}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_8 annotation (Placement(transformation(extent=
-            {{262,-28},{268,-22}}), iconTransformation(extent={{-120,-100},
-            {-100,-80}})));
-  LEPSE.Interfaces.Node node_9 annotation (Placement(transformation(extent=
-            {{274,18},{280,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_11 annotation (Placement(transformation(extent={
+            {400,20},{406,26}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_10 annotation (Placement(transformation(extent
-          ={{304,18},{310,24}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_12 annotation (Placement(transformation(extent={
+            {432,20},{438,26}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_11 annotation (Placement(transformation(extent
-          ={{400,20},{406,26}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_13 annotation (Placement(transformation(extent={
+            {468,20},{474,26}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_12 annotation (Placement(transformation(extent
-          ={{432,20},{438,26}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_14 annotation (Placement(transformation(extent={
+            {468,66},{474,72}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_13 annotation (Placement(transformation(extent
-          ={{468,20},{474,26}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_15 annotation (Placement(transformation(extent={
+            {192,46},{198,52}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_14 annotation (Placement(transformation(extent
-          ={{468,66},{474,72}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_16 annotation (Placement(transformation(extent={
+            {18,-92},{24,-86}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_15 annotation (Placement(transformation(extent
-          ={{192,46},{198,52}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_17 annotation (Placement(transformation(extent={
+            {124,-18},{130,-12}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_16 annotation (Placement(transformation(extent
-          ={{18,-92},{24,-86}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_21 annotation (Placement(transformation(extent={
+            {-30,-34},{-24,-28}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_17 annotation (Placement(transformation(extent
-          ={{124,-18},{130,-12}}), iconTransformation(extent={{-120,-100},{
+  OMLET.Interfaces.Node node_22 annotation (Placement(transformation(extent={
+            {6,-34},{12,-28}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_23 annotation (Placement(transformation(extent={
+            {34,-34},{40,-28}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_24 annotation (Placement(transformation(extent={
+            {88,-20},{94,-14}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_31 annotation (Placement(transformation(extent={
+            {186,-16},{192,-10}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_32 annotation (Placement(transformation(extent={
+            {162,-48},{168,-42}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_33 annotation (Placement(transformation(extent={
+            {212,-62},{218,-56}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_34 annotation (Placement(transformation(extent={
+            {250,-62},{256,-56}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_35 annotation (Placement(transformation(extent={
+            {268,-76},{274,-70}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_36 annotation (Placement(transformation(extent={
+            {284,-124},{290,-118}}), iconTransformation(extent={{-120,-100},{
             -100,-80}})));
-  LEPSE.Interfaces.Node node_21 annotation (Placement(transformation(extent
-          ={{-30,-34},{-24,-28}}), iconTransformation(extent={{-120,-100},{
+  OMLET.Interfaces.Node node_48 annotation (Placement(transformation(extent={
+            {110,-112},{116,-106}}), iconTransformation(extent={{-120,-100},{
             -100,-80}})));
-  LEPSE.Interfaces.Node node_22 annotation (Placement(transformation(extent
-          ={{6,-34},{12,-28}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_53 annotation (Placement(transformation(extent={
+            {132,-74},{138,-68}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_23 annotation (Placement(transformation(extent
-          ={{34,-34},{40,-28}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_51 annotation (Placement(transformation(extent={
+            {60,-50},{66,-44}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_24 annotation (Placement(transformation(extent
-          ={{88,-20},{94,-14}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_52 annotation (Placement(transformation(extent={
+            {88,-50},{94,-44}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_31 annotation (Placement(transformation(extent
-          ={{186,-16},{192,-10}}), iconTransformation(extent={{-120,-100},{
+  OMLET.Interfaces.Node node_47 annotation (Placement(transformation(extent={
+            {202,-120},{208,-114}}), iconTransformation(extent={{-120,-100},{
             -100,-80}})));
-  LEPSE.Interfaces.Node node_32 annotation (Placement(transformation(extent
-          ={{162,-48},{168,-42}}), iconTransformation(extent={{-120,-100},{
+  OMLET.Interfaces.Node node_54 annotation (Placement(transformation(extent={
+            {182,-152},{188,-146}}), iconTransformation(extent={{-120,-100},{
             -100,-80}})));
-  LEPSE.Interfaces.Node node_33 annotation (Placement(transformation(extent
-          ={{212,-62},{218,-56}}), iconTransformation(extent={{-120,-100},{
+  OMLET.Interfaces.Node node_55 annotation (Placement(transformation(extent={
+            {238,-152},{244,-146}}), iconTransformation(extent={{-120,-100},{
             -100,-80}})));
-  LEPSE.Interfaces.Node node_34 annotation (Placement(transformation(extent
-          ={{250,-62},{256,-56}}), iconTransformation(extent={{-120,-100},{
+  OMLET.Interfaces.Node node_46 annotation (Placement(transformation(extent={
+            {312,-152},{318,-146}}), iconTransformation(extent={{-120,-100},{
             -100,-80}})));
-  LEPSE.Interfaces.Node node_35 annotation (Placement(transformation(extent
-          ={{268,-76},{274,-70}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_36 annotation (Placement(transformation(extent
-          ={{284,-124},{290,-118}}), iconTransformation(extent={{-120,-100},
-            {-100,-80}})));
-  LEPSE.Interfaces.Node node_48 annotation (Placement(transformation(extent
-          ={{110,-112},{116,-106}}), iconTransformation(extent={{-120,-100},
-            {-100,-80}})));
-  LEPSE.Interfaces.Node node_53 annotation (Placement(transformation(extent
-          ={{132,-74},{138,-68}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_51 annotation (Placement(transformation(extent
-          ={{60,-50},{66,-44}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_39 annotation (Placement(transformation(extent={
+            {334,-88},{340,-82}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_52 annotation (Placement(transformation(extent
-          ={{88,-50},{94,-44}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_37 annotation (Placement(transformation(extent={
+            {334,-10},{340,-4}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_47 annotation (Placement(transformation(extent
-          ={{202,-120},{208,-114}}), iconTransformation(extent={{-120,-100},
-            {-100,-80}})));
-  LEPSE.Interfaces.Node node_54 annotation (Placement(transformation(extent
-          ={{182,-152},{188,-146}}), iconTransformation(extent={{-120,-100},
-            {-100,-80}})));
-  LEPSE.Interfaces.Node node_55 annotation (Placement(transformation(extent
-          ={{238,-152},{244,-146}}), iconTransformation(extent={{-120,-100},
-            {-100,-80}})));
-  LEPSE.Interfaces.Node node_46 annotation (Placement(transformation(extent
-          ={{312,-152},{318,-146}}), iconTransformation(extent={{-120,-100},
-            {-100,-80}})));
-  LEPSE.Interfaces.Node node_39 annotation (Placement(transformation(extent
-          ={{334,-88},{340,-82}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_37 annotation (Placement(transformation(extent
-          ={{334,-10},{340,-4}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_38 annotation (Placement(transformation(extent={
+            {364,-54},{370,-48}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
-  LEPSE.Interfaces.Node node_38 annotation (Placement(transformation(extent
-          ={{364,-54},{370,-48}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_40 annotation (Placement(transformation(extent
-          ={{400,-44},{406,-38}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_45 annotation (Placement(transformation(extent
-          ={{486,-22},{492,-16}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_43 annotation (Placement(transformation(extent
-          ={{492,-96},{498,-90}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_44 annotation (Placement(transformation(extent
-          ={{466,-44},{472,-38}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Interfaces.Node node_42 annotation (Placement(transformation(extent
-          ={{434,-44},{440,-38}}), iconTransformation(extent={{-120,-100},{
-            -100,-80}})));
-  LEPSE.Basic.Branches.Branches_per_units.HVline L0709_2(
-    TLineOff=40,
-    dTLineOff=1000,
-    Koff=100000,
-    Rline=0.0122,
-    Xline=0.0981,
-    Bline1=0.02875,
-    Bline2=0.02875)
-    annotation (Placement(transformation(extent={{254,-12},{274,8}})));
-  LEPSE.Basic.Shunts.Shunts_per_units.ShortCircuitShunt shortCircuitShunt(
-    Bn=-12,
-    TkzOn=40.0,
-    dTkzOn=0.11) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={260,56})));
-  LEPSE.Basic.Shunts.Shunts_per_units.ShortCircuitShunt shortCircuitShunt1
-    annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={270,56})));
-  LEPSE.Basic.Transformers.Transformers_per_units.Transformer T5054(Rline=
-        0.0321, Xline=0.6775) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={168,-150})));
-  LEPSE.Interfaces.Node node_18 annotation (Placement(transformation(extent={{
-            148,-152},{154,-146}}), iconTransformation(extent={{-120,-100},{-100,
+  OMLET.Interfaces.Node node_40 annotation (Placement(transformation(extent={
+            {400,-44},{406,-38}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_45 annotation (Placement(transformation(extent={
+            {486,-22},{492,-16}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_43 annotation (Placement(transformation(extent={
+            {492,-96},{498,-90}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_44 annotation (Placement(transformation(extent={
+            {466,-44},{472,-38}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  OMLET.Interfaces.Node node_42 annotation (Placement(transformation(extent={
+            {434,-44},{440,-38}}), iconTransformation(extent={{-120,-100},{-100,
+            -80}})));
+  Interfaces.Node node_18 annotation (Placement(transformation(extent={{148,
+            -152},{154,-146}}), iconTransformation(extent={{-120,-100},{-100,
             -80}})));
 equation
   // the formulas of the derivatives of the angles
@@ -810,34 +308,14 @@ equation
                                         color={28,108,200}));
 protected
   model KKT_1
-    LEPSE.Basic.Generators.Per_units.SM G01(
-      Pg=9,
-      Qg=4.3589,
-      Ut=1,
-      Xd_p=0.282,
-      Xq_p=0.282,
-      Xs_p=0.02,
-      X1d_p=0.038,
-      X2d_p=0.027,
-      X2q_p=0.027,
-      Rf_p=9.34e-005,
-      R1d_p=0.0002987,
-      R1q_p=0.000161,
-      Tj_p=49.7,
-      Sigma=0.0475,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=0,
-          origin={-42,20})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G01_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G01_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0) annotation (Placement(transformation(
           extent={{-13,-13},{13,13}},
           rotation=0,
           origin={-65,37})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
             rotation=0, extent={{70,-2},{90,18}})));
   equation
     connect(G01.dUtr_pin,G01_Regulator. dV_pin) annotation (Line(
@@ -906,28 +384,7 @@ protected
   end KKT_1;
 
   model Submodel3
-    LEPSE.Basic.Generators.Per_units.SM G54(
-      Pg=0.188,
-      Qg=0.0389,
-      Ut=1.019,
-      Xd_p=4.836,
-      Xq_p=3.269,
-      Xs_p=0.602,
-      X1d_p=1.806,
-      X2d_p=1.214,
-      X2q_p=1.242,
-      Rf_p=0.004708,
-      R1d_p=0.026201,
-      R1q_p=0.012028,
-      Tj_p=1.86,
-      Sigma=0.0475,
-      Mtmax=1.15,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=0,
-          origin={19,-4})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G54_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G54_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0,
@@ -935,7 +392,7 @@ protected
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-5,-4})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
             rotation=0, extent={{65.5,-1.5},{82,10}}), iconTransformation(
             extent={{66,-6},{82,10}})));
   equation
@@ -1010,29 +467,7 @@ protected
   end Submodel3;
 
   model Submodel4
-    LEPSE.Basic.Generators.Per_units.SM G07(
-      Pg=1.33,
-      Qg=0.31045,
-      Ut=1.032,
-      Xd_p=1.314,
-      Xq_p=1.314,
-      Xs_p=0.082,
-      X1d_p=0.166,
-      X2d_p=0.110,
-      X2q_p=0.110,
-      Rf_p=0.000601,
-      R1d_p=0.000226,
-      R1q_p=0.000240,
-      Tj_p=19.712,
-      Sigma=0.0475,
-      Mtmax=1.15,
-      TkzOn=1000,
-      Pg_new=0.135,
-      Kemax=2.0) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=0,
-          origin={17,-10})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G07_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G07_Regulator(
       K0u=-25,
       K0w=-5.0,
       K1w=0.8,
@@ -1041,7 +476,7 @@ protected
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-9,4})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
             rotation=0, extent={{-90.5,-17},{-72,2}}), iconTransformation(
             extent={{66,-8},{86,12}})));
   equation
@@ -1120,34 +555,14 @@ protected
   end Submodel4;
 
   model Submodel6
-    LEPSE.Basic.Generators.Per_units.SM G44(
-      Pg=0.052,
-      Qg=0.0094,
-      Ut=0.978,
-      Xd_p=6.557,
-      Xq_p=4.068,
-      Xs_p=0.644,
-      X1d_p=1.579,
-      X2d_p=1.214,
-      X2q_p=1.457,
-      Rf_p=0.0031941,
-      R1d_p=0.195869,
-      R1q_p=0.100175,
-      Tj_p=1.457,
-      Sigma=0.0475,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=180,
-          origin={-16,5})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G44_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G44_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=180,
           origin={16,3})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
             rotation=0, extent={{-161,-7.5},{-146,8}}), iconTransformation(
             extent={{66,-8},{84,9.5}})));
   equation
@@ -1222,28 +637,7 @@ protected
   end Submodel6;
 
   model Submodel7
-    LEPSE.Basic.Generators.Per_units.SM G53(
-      Pg=0.146,
-      Qg=0,
-      Ut=0.939,
-      Xd_p=7.216,
-      Xq_p=5.056,
-      Xs_p=1.197,
-      X1d_p=2.731,
-      X2d_p=1.964,
-      X2q_p=1.933,
-      Rf_p=0.005142,
-      R1d_p=0.135060,
-      R1q_p=0.014478,
-      Tj_p=0.695175,
-      Sigma=0.0475,
-      Mtmax=1.15,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=0,
-          origin={0,-6})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G53_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G53_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0,
@@ -1251,9 +645,9 @@ protected
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-24,-6})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
-            rotation=0, extent={{66,-10},{86,10}}), iconTransformation(
-            extent={{66,-10},{86,10}})));
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+            rotation=0, extent={{66,-10},{86,10}}), iconTransformation(extent
+            ={{66,-10},{86,10}})));
   equation
     connect(G53.dUtr_pin,G53_Regulator. dV_pin) annotation (Line(
         points={{-5.4,4},{-2,4},{-2,8},{-42,8},{-42,-1},{-34.0833,-1}},
@@ -1325,34 +719,14 @@ protected
   end Submodel7;
 
   model Submodel8
-    LEPSE.Basic.Generators.Per_units.SM G36(
-      Pg=0.1046,
-      Qg=0.0383,
-      Ut=1.048,
-      Xd_p=7.491,
-      Xq_p=7.491,
-      Xs_p=0.587,
-      X1d_p=0.984,
-      X2d_p=0.591,
-      X2q_p=0.591,
-      Rf_p=0.002591,
-      R1d_p=0.005109,
-      R1q_p=0.002554,
-      Tj_p=1.98,
-      Sigma=0.0475,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=180,
-          origin={-42,7})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G36_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G36_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=180,
           origin={4,5})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
             rotation=0, extent={{63,-15.5},{83,10.5}}), iconTransformation(
             extent={{64,-8},{83,10.5}})));
   equation
@@ -1428,36 +802,16 @@ protected
   end Submodel8;
 
   model Submodel9
-    LEPSE.Basic.Generators.Per_units.SM G33(
-      Pg=0.161,
-      Qg=0.0027,
-      Ut=0.986,
-      Xd_p=5.25,
-      Xq_p=3.275,
-      Xs_p=0.758,
-      X1d_p=1.550,
-      X2d_p=1.200,
-      X2q_p=1.240,
-      Rf_p=0.004823,
-      R1d_p=0.088442,
-      R1q_p=0.008319,
-      Tj_p=1.567544,
-      Sigma=0.0475,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=180,
-          origin={-39,5})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G33_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G33_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=180,
           origin={3,9})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
-            rotation=0, extent={{69.5,-3.5},{76.5,3.5}}),
-          iconTransformation(extent={{65.5,-7.5},{84,10}})));
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+            rotation=0, extent={{69.5,-3.5},{76.5,3.5}}), iconTransformation(
+            extent={{65.5,-7.5},{84,10}})));
   equation
     connect(G33.dUtr_pin,G33_Regulator. dV_pin) annotation (Line(
         points={{-33.4,-2.6},{-36,-2.6},{-36,-8},{12.25,-8},{12.25,2}},
@@ -1532,27 +886,7 @@ protected
   end Submodel9;
 
   model Submodel10
-    LEPSE.Basic.Generators.Per_units.SM G01(
-      Pg=54.8714,
-      Qg=26.5754,
-      Ut=1.02,
-      Xd_p=0.041,
-      Xq_p=0.041,
-      Xs_p=0.0036,
-      X1d_p=0.0055,
-      X2d_p=0.0039,
-      X2q_p=0.0039,
-      Rf_p=0.000014,
-      R1d_p=0.000035,
-      R1q_p=0.000048,
-      Tj_p=378.88,
-      Sigma=0.0475,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=0,
-          origin={-46,22})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G01_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G01_Regulator(
       K0u=-50,
       K1u=-2,
       K0w=0,
@@ -1560,9 +894,9 @@ protected
           extent={{-13,-13},{13,13}},
           rotation=0,
           origin={-71,39})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
-            rotation=0, extent={{64,-10},{84,10}}), iconTransformation(
-            extent={{64,-10},{84,10}})));
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+            rotation=0, extent={{64,-10},{84,10}}), iconTransformation(extent
+            ={{64,-10},{84,10}})));
   equation
     connect(G01.dUtr_pin,G01_Regulator. dV_pin) annotation (Line(
         points={{-51.4,32},{-52,32},{-52,56},{-88,56},{-88,45.5},{-84.1083,
@@ -1636,34 +970,14 @@ protected
   end Submodel10;
 
   model Submodel1_1
-    LEPSE.Basic.Generators.Per_units.SM G23(
-      Pg=0.048,
-      Qg=0.01681,
-      Ut=0.995,
-      Xd_p=10.306,
-      Xq_p=6.481,
-      Xs_p=0.531,
-      X1d_p=3.719,
-      X2d_p=2.444,
-      X2q_p=2.869,
-      Rf_p=0.016728,
-      R1d_p=0.083343,
-      R1q_p=0.040406,
-      Tj_p=0.676,
-      Sigma=0.0475,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=180,
-          origin={-15,6})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G23_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G23_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=180,
           origin={7,4})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
           rotation=180,
           extent={{-8,-8},{8,8}},
           origin={-132,4}), iconTransformation(extent={{64,-8},{82,10}})));
@@ -1739,34 +1053,14 @@ protected
   end Submodel1_1;
 
   model Submodel2_1
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G24_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G24_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=180,
           origin={6,8})));
-    LEPSE.Basic.Generators.Per_units.SM G24(
-      Pg=0.0412,
-      Qg=0.031,
-      Ut=1.001,
-      Xd_p=15.714,
-      Xq_p=10.286,
-      Xs_p=1.288,
-      X1d_p=5.929,
-      X2d_p=3.857,
-      X2q_p=4.286,
-      Rf_p=0.018811,
-      R1d_p=0.107755,
-      R1q_p=0.053144,
-      Tj_p=0.45304,
-      Sigma=0.0475,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=180,
-          origin={-30,-2})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
             rotation=0, extent={{71,1.5},{77,7.5}}), iconTransformation(
             extent={{65,-6.5},{82,10}})));
   equation
@@ -1840,37 +1134,16 @@ protected
   end Submodel2_1;
 
   model Submodel5_1
-    LEPSE.Basic.Generators.Per_units.SM G13(
-      Pg=0.067,
-      Qg=-0.0105,
-      Ut=0.986,
-      Xd_p=13.701,
-      Xq_p=8.5,
-      Xs_p=1.345,
-      X1d_p=3.299,
-      X2d_p=2.537,
-      X2q_p=3.045,
-      Rf_p=0.0066742,
-      R1d_p=0.409279,
-      R1q_p=0.209320,
-      Tj_p=0.697,
-      Sigma=0.0475,
-      Mtmax=1.15,
-      TkzOn=1000,
-      Pg_new=0.135) annotation (Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=0,
-          origin={26,-12})));
-    LEPSE.Basic.Excitation_systems.Regulators.AVR_standart G013_Regulator(
+    OMLET.Basic.Excitation_systems.Regulators.AVR_standart G013_Regulator(
       K0u=-25,
       K0w=0,
       K1w=0) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={2,2})));
-    LEPSE.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
-            rotation=0, extent={{59,-6.5},{81,7}}), iconTransformation(
-            extent={{66,-8},{84,10}})));
+    OMLET.Interfaces.Pin_v2 Stator_pin annotation (Placement(transformation(
+            rotation=0, extent={{59,-6.5},{81,7}}), iconTransformation(extent
+            ={{66,-8},{84,10}})));
   equation
     connect(G13.dUtr_pin,G013_Regulator. dV_pin) annotation (Line(
         points={{20.6,-2},{24,-2},{24,16},{-16,16},{-16,7},{-8.08333,7}},

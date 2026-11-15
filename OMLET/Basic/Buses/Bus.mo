@@ -1,11 +1,11 @@
-﻿within ;
+﻿within OMLET.Basic.Buses;
 model Bus
   parameter Integer busNumber = 1;
   parameter Real Unom=330 "Nominal bus voltage, kV";
   Real Um(start = 1.0, fixed = false) "Full bus voltage, kV";
   parameter Boolean displayVoltage=true "Display bus voltage";
-  LEPSE.Interfaces.Pin_v2 bus_pin annotation (Placement(transformation(extent={
-            {-12,-12},{10,10}}), iconTransformation(extent={{-12,-12},{10,10}})));
+  Interfaces.Pin_v2 bus_pin annotation (Placement(transformation(extent={{-12,-12},
+            {10,10}}), iconTransformation(extent={{-12,-12},{10,10}})));
 equation
   // full bus voltage calculation
   Um = (sqrt(bus_pin.Vd^(2) + bus_pin.Vq^(2)))*Unom;

@@ -1,4 +1,4 @@
-﻿within Regulators;
+﻿within OMLET.Basic.Excitation_systems.Regulators;
 model AVR_SD
   parameter Real K0u=10 "Voltage deviation control coefficient";
   parameter Real K1u=0 "Voltage derivative control coefficient";
@@ -21,109 +21,110 @@ model AVR_SD
   input Real Qmax;
   input Real Qmin;
 
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function VoltageDeviation(b={-K0u},
-      a={1}) annotation (extent=[-74,57.3333; -27.3333,104], Placement(
-        transformation(extent={{-80,39.3333},{-33.3333,86}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function VoltageDerivative(b={-K1u,0},
-      a={T1u,1}) annotation (extent=[-73.3333,17.3333; -26.6667,64], Placement(
-        transformation(extent={{-79.3333,15.3333},{-32.6667,62}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyBlockD(b={T0w,0},
-      a={T0w,1}) annotation (extent=[-82.6667,-22.6667; -48,24], Placement(
-        transformation(extent={{-98.6667,-16.6667},{-64,30}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyBlockU(b={1,0},
-      a={T1w,1}) annotation (extent=[-82,-63.3333; -48,-16], Placement(
-        transformation(extent={{-96,-45.3333},{-62,2}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyDeviation(b={1}, a=
-        {Tfb,1}) annotation (extent=[-28,-46; 10,2], Placement(transformation(
-          extent={{-2,-28},{36,20}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function ExcitationCurrent(b={-K1if,
-        0}, a={T1if,1}) annotation (extent=[-74,-102; -27.3333,-55.3333],
-      Placement(transformation(extent={{-86,-68},{-39.3333,-21.3333}}, rotation
+  Logic.Transfer_Function VoltageDeviation(b={-K0u}, a={1}) annotation (
+     extent=[-74,57.3333; -27.3333,104], Placement(transformation(
+          extent={{-80,45.3333},{-33.3333,92}}, rotation=0)));
+  Logic.Transfer_Function VoltageDerivative(b={-K1u,0}, a={T1u,1})
+    annotation (extent=[-73.3333,17.3333; -26.6667,64], Placement(
+        transformation(extent={{-79.3333,19.3333},{-32.6667,66}},
+          rotation=0)));
+  Logic.Transfer_Function FrequencyBlockD(b={T0w,0}, a={T0w,1})
+    annotation (extent=[-82.6667,-22.6667; -48,24], Placement(
+        transformation(extent={{-92.6667,-8.6667},{-58,38}},  rotation=
+            0)));
+  Logic.Transfer_Function FrequencyBlockU(b={1,0}, a={T1w,1})
+    annotation (extent=[-82,-63.3333; -48,-16], Placement(
+        transformation(extent={{-90,-45.3333},{-56,2}}, rotation=0)));
+  Logic.Transfer_Function FrequencyDeviation(b={1}, a={Tfb,1})
+    annotation (extent=[-28,-46; 10,2], Placement(transformation(extent={{0,-28},
+            {38,20}},          rotation=0)));
+  Logic.Transfer_Function ExcitationCurrent(b={-K1if,0}, a={T1if,1})
+    annotation (extent=[-74,-102; -27.3333,-55.3333], Placement(
+        transformation(extent={{-84,-78},{-37.3333,-31.3333}}, rotation
           =0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function SimpleExciter(b={1}, a=
-        {Tokp,1}) annotation (extent=[56,-24; 83.3333,22.6667], Placement(
-        transformation(extent={{90,6},{117.333,52.6667}}, rotation=0)));
-  LEPSE.Interfaces.Signal_pin dV_pin annotation (
+  Logic.Transfer_Function SimpleExciter(b={1}, a={Tokp,1}) annotation (
+      extent=[56,-24; 83.3333,22.6667], Placement(transformation(extent
+          ={{90,6},{117.333,52.6667}}, rotation=0)));
+  OMLET.Interfaces.Signal_pin dV_pin annotation (
     extent=[-96,64; -86,76],
     layer="icon",
-    Placement(transformation(extent={{-106,44},{-96,56}},rotation=0),
-        iconTransformation(extent={{-106,44},{-96,56}})));
-  LEPSE.Interfaces.Signal_pin dV1_pin annotation (
+    Placement(transformation(extent={{-106,84},{-96,96}}, rotation=0),
+        iconTransformation(extent={{-106,84},{-96,96}})));
+  OMLET.Interfaces.Signal_pin dV1_pin annotation (
     extent=[-96,34; -86,46],
     layer="icon",
-    Placement(transformation(extent={{-106,14},{-96,26}},rotation=0),
-        iconTransformation(extent={{-106,14},{-96,26}})));
-  LEPSE.Interfaces.Signal_pin dfsys_pin annotation (
+    Placement(transformation(extent={{-106,36},{-96,48}}, rotation=0),
+        iconTransformation(extent={{-106,36},{-96,48}})));
+  OMLET.Interfaces.Signal_pin dfsys_pin annotation (
     extent=[-96,4; -86,16],
     layer="icon",
-    Placement(transformation(extent={{-106,-16},{-96,-4}},
-                                                        rotation=0),
-        iconTransformation(extent={{-106,-16},{-96,-4}})));
-  LEPSE.Interfaces.Signal_pin dfU_pin annotation (
+    Placement(transformation(extent={{-106,8},{-96,20}},   rotation=0),
+        iconTransformation(extent={{-106,8},{-96,20}})));
+  OMLET.Interfaces.Signal_pin dfU_pin annotation (
     extent=[-96,-26; -86,-14],
     layer="icon",
-    Placement(transformation(extent={{-106,-46},{-96,-34}},rotation=0),
-        iconTransformation(extent={{-106,-46},{-96,-34}})));
-  LEPSE.Interfaces.Signal_pin dif1_pin annotation (
+    Placement(transformation(extent={{-106,-28},{-96,-16}}, rotation=0),
+        iconTransformation(extent={{-106,-28},{-96,-16}})));
+  OMLET.Interfaces.Signal_pin dif1_pin annotation (
     extent=[-96,-56; -86,-44],
     layer="icon",
-    Placement(transformation(extent={{-106,-70},{-96,-58}},rotation=0),
-        iconTransformation(extent={{-106,-70},{-96,-58}})));
-  LEPSE.Interfaces.Signal_pin out_pin annotation (
+    Placement(transformation(extent={{-106,-60},{-96,-48}}, rotation=0),
+        iconTransformation(extent={{-106,-60},{-96,-48}})));
+  OMLET.Interfaces.Signal_pin out_pin annotation (
     extent=[86,2; 96,22],
     layer="icon",
-    Placement(transformation(extent={{136,-18},{146,2}},rotation=0),
+    Placement(transformation(extent={{136,-18},{146,2}}, rotation=0),
         iconTransformation(extent={{136,-18},{146,2}})));
-  LEPSE.Basic.Excitation_systems.Logic.Summator_2 Summator1 annotation (
-     extent=[-44,-32; -30,-12], Placement(transformation(extent={{-20,-14},
-            {-6,6}}, rotation=0)));
-  LEPSE.Interfaces.Signal_pin Ut_pin annotation (Placement(transformation(
-          extent={{-106,-90},{-94,-78}}),iconTransformation(extent={{-106,
+  OMLET.Basic.Excitation_systems.Logic.Summator_2 Summator1 annotation (
+      extent=[-44,-32; -30,-12], Placement(transformation(extent={{-16,-14},
+            {-2,6}}, rotation=0)));
+  OMLET.Interfaces.Signal_pin Ut_pin annotation (Placement(transformation(
+          extent={{-106,-90},{-94,-78}}), iconTransformation(extent={{-106,
             -90},{-94,-78}})));
-  LEPSE.Basic.Excitation_systems.Logic.logical_switch logical_switch1(
+  OMLET.Basic.Excitation_systems.Logic.logical_switch logical_switch1(
     a1=Uforc,
     a2=Udeforc,
     a3=K0u,
     a4=Tforcedelay)
     annotation (Placement(transformation(extent={{66,20},{86,40}})));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyBlockD1(b={K0w},
-      a={1}) annotation (extent=[-82.6667,-22.6667; -48,24], Placement(
-        transformation(extent={{-58.6667,-16.6667},{-24,30}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Transfer_Function FrequencyBlockD2(b={-K1w},
-      a={1}) annotation (extent=[-82.6667,-22.6667; -48,24], Placement(
-        transformation(extent={{-56.6667,-44.6667},{-22,2}}, rotation=0)));
-  LEPSE.Basic.Excitation_systems.Logic.Reactive_power_limiter under_overexcitation_limiter(
+  Logic.Transfer_Function FrequencyBlockD1(b={K0w}, a={1}) annotation (
+      extent=[-82.6667,-22.6667; -48,24], Placement(transformation(
+          extent={{-52.6667,-8.6667},{-18,38}},  rotation=0)));
+  Logic.Transfer_Function FrequencyBlockD2(b={-K1w}, a={1}) annotation (
+     extent=[-82.6667,-22.6667; -48,24], Placement(transformation(
+          extent={{-50.6667,-44.6667},{-16,2}}, rotation=0)));
+  Logic.Reactive_power_limiter under_overexcitation_limiter(
     Qgen=Qgen,
     Qmax=Qmax,
     Qmin=Qmin,
     inService=inService)
-    annotation (Placement(transformation(extent={{126,18},{146,38}})));
+    annotation (Placement(transformation(extent={{122,16},{152,42}})));
   parameter Boolean inService=true "Excitation limiter condition";
-  LEPSE.Basic.Excitation_systems.Logic.Summator_4 summator_4_1
+  Logic.Summator_4 summator_4_1
     annotation (Placement(transformation(extent={{40,12},{60,42}})));
-  LEPSE.Basic.Excitation_systems.Logic.AVR_signal_limiter aVR_signal_limiter(
+  Logic.AVR_signal_limiter aVR_signal_limiter(
     Umax=Umax,
     Umin=Umin,
     inService_1=inService_1)
-    annotation (Placement(transformation(extent={{96,-12},{120,10}})));
+    annotation (Placement(transformation(extent={{98,-22},{132,8}})));
   parameter Real Umax "AVR upper limit";
   parameter Real Umin "AVR lower limit";
   parameter Boolean inService_1=true "AVR_signal limiter condition";
 equation
   connect(dfsys_pin, FrequencyBlockD.inp) annotation (points=[-91, 10; -
-        79.5467, 0.666667], Line(points={{-101,-10},{-110,-10},{-110,6.66665},{-98.6667,
-          6.66665}}));
+        79.5467, 0.666667], Line(points={{-101,14},{-101,14.6666},{
+          -92.6667,14.6666}}));
   connect(dfU_pin, FrequencyBlockU.inp) annotation (points=[-91, -20; -
-        78.94, -39.6667], Line(points={{-101,-40},{-102,-40},{-102,
-          -21.6667},{-96,-21.6667}}));
+        78.94, -39.6667], Line(points={{-101,-22},{-101,-21.6667},{-90,
+          -21.6667}}));
   connect(dif1_pin, ExcitationCurrent.inp) annotation (points=[-91, -50; -
-        69.8, -78.6667], Line(points={{-101,-64},{-101,-44.6667},{-86,
-          -44.6667}}));
+        69.8, -78.6667], Line(points={{-101,-54},{-90,-54},{-90,-54.6667},
+          {-84,-54.6667}}));
   connect(Summator1.out, FrequencyDeviation.inp) annotation (points=[-
-        31.12, -22; -24.58, -22], Line(points={{-6,-4},{-2,-4}}));
+        31.12, -22; -24.58, -22], Line(points={{-2,-4},{0,-4}}));
   connect(VoltageDerivative.inp, dV1_pin) annotation (points=[-69.1333,
-        40.6667; -91, 40], Line(points={{-79.3333,38.6666},{-79.3333,20},
-          {-101,20}}));
+        40.6667; -91, 40], Line(points={{-79.3333,42.6667},{-79.3333,42},
+          {-101,42}}));
   when initial() then
     reinit(FrequencyDeviation.x[1], DL0);
     //     reinit(FrequencyDeviation.x[1],DL0);
@@ -138,45 +139,45 @@ equation
           -84},{76,-84},{76,20.1667},{76.2,20.1667}},
                                                color={0,0,0}));
   connect(VoltageDeviation.out, logical_switch1.inp1) annotation (Line(points={{
-          -33.3333,62.6667},{34,62.6667},{34,46},{66,46},{66,32.8333}},
+          -33.3333,68.6667},{34,68.6667},{34,46},{66,46},{66,32.8333}},
                      color={0,0,0}));
   connect(VoltageDeviation.inp, logical_switch1.inp1inf) annotation (Line(
-        points={{-80,62.6667},{-80,90},{76.1,90},{76.1,40}},          color={
+        points={{-80,68.6667},{-80,90},{76.1,90},{76.1,40}},          color={
           0,0,0}));
   connect(FrequencyBlockU.out, FrequencyBlockD2.inp) annotation (Line(
-      points={{-62,-21.6667},{-62,-21.3333},{-56.6667,-21.3333}},
+      points={{-56,-21.6667},{-56,-21.3333},{-50.6667,-21.3333}},
       color={0,0,0}));
   connect(Summator1.inp2, FrequencyBlockD2.out) annotation (Line(
-      points={{-20,-8},{-20,-21.3333},{-22,-21.3333}},
+      points={{-16,-8},{-16,-21.3333}},
       color={0,0,0}));
   connect(Summator1.inp1, FrequencyBlockD1.out) annotation (Line(
-      points={{-20,0.2},{-20,0},{-24,0},{-24,6.66665}},
+      points={{-16,0.2},{-16,14.6666},{-18,14.6666}},
       color={0,0,0}));
-  connect(FrequencyBlockD.out, FrequencyBlockD1.inp) annotation (Line(points={{-64,
-          6.66665},{-58.6667,6.66665}},                             color={0,0,0}));
+  connect(FrequencyBlockD.out, FrequencyBlockD1.inp) annotation (Line(points={{-58,
+          14.6666},{-58,14},{-58,14},{-56,14},{-56,14.6666},{-52.6667,
+          14.6666}},                                                color={0,0,0}));
   connect(SimpleExciter.out, under_overexcitation_limiter.inp)
-    annotation (Line(points={{117.333,29.3333},{117.333,28},{126,28}},
+    annotation (Line(points={{117.333,29.3333},{117.333,29},{122,29}},
         color={0,0,0}));
   connect(VoltageDeviation.out, summator_4_1.inp1) annotation (Line(points={{
-          -33.3333,62.6667},{34,62.6667},{34,37.8},{40,37.8}},
+          -33.3333,68.6667},{34,68.6667},{34,37.8},{40,37.8}},
                                                      color={0,0,0}));
   connect(VoltageDerivative.out, summator_4_1.inp2) annotation (Line(points={{
-          -32.6667,38.6666},{30,38.6666},{30,30.9},{40,30.9}},
+          -32.6667,42.6667},{30,42.6667},{30,30.9},{40,30.9}},
                                                       color={0,0,0}));
   connect(FrequencyDeviation.out, summator_4_1.inp3)
-    annotation (Line(points={{36,-4},{36,24},{40,24}}, color={0,0,0}));
+    annotation (Line(points={{38,-4},{38,24},{40,24}}, color={0,0,0}));
   connect(ExcitationCurrent.out, summator_4_1.inp4) annotation (Line(points={{
-          -39.3333,-44.6667},{0,-44.6667},{0,-44},{40,-44},{40,17.1}},
-                                                              color={0,0,0}));
+          -37.3333,-54.6667},{40,-54.6667},{40,17.1}},        color={0,0,0}));
   connect(summator_4_1.out, logical_switch1.inp2)
     annotation (Line(points={{60,27},{66,27}}, color={0,0,0}));
-  connect(dV_pin, VoltageDeviation.inp) annotation (Line(points={{-101,50},
-          {-88,50},{-88,90},{-80,90},{-80,62.6667}}, color={0,0,0}));
+  connect(dV_pin, VoltageDeviation.inp) annotation (Line(points={{-101,90},
+          {-80,90},{-80,68.6667}},                   color={0,0,0}));
   connect(aVR_signal_limiter.inp, under_overexcitation_limiter.out)
-    annotation (Line(points={{96,-1},{96,-2},{92,-2},{92,-16},{132,-16},{
-          132,14},{150,14},{150,28},{146,28}}, color={0,0,0}));
-  connect(aVR_signal_limiter.out, out_pin) annotation (Line(points={{120,
-          -1},{120,-2},{128,-2},{128,-8},{141,-8}}, color={0,0,0}));
+    annotation (Line(points={{98,-7},{98,-8},{92,-8},{92,14},{152,14},{
+          152,29}},                            color={0,0,0}));
+  connect(aVR_signal_limiter.out, out_pin) annotation (Line(points={{132,-7},
+          {132,-8},{141,-8}},                       color={0,0,0}));
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],
@@ -246,25 +247,29 @@ equation
       Line(points=[86, 12; 66, 12], style(thickness=2))),
     Diagram(coordinateSystem(extent={{-100,-100},{140,100}}), graphics={
         Text(
-          extent={{-36,78},{-26,68}},
+          extent={{-36,82},{-26,72}},
           textColor={0,0,0},
           textString="ΔU"),
         Text(
-          extent={{-36,52},{-24,40}},
+          extent={{-36,56},{-24,44}},
           textColor={0,0,0},
           textString="ΔU'"),
         Text(
-          extent={{-66,18},{-54,8}},
+          extent={{-18,30},{-6,20}},
           textColor={0,0,0},
           textString="ΔF"),
         Text(
-          extent={{-64,-10},{-52,-20}},
+          extent={{-14,-22},{-2,-32}},
           textColor={0,0,0},
           textString="ΔF'"),
         Text(
-          extent={{-44,-32},{-32,-42}},
+          extent={{-36,-40},{-24,-50}},
           textColor={0,0,0},
-          textString="ΔIf'")}),
+          textString="ΔIf'"),
+        Text(
+          extent={{-38,-72},{-26,-82}},
+          textColor={0,0,0},
+          textString="Utr")}),
     Documentation(info="<html>
 <p>The model of Automatic Voltage Regulator (AVR), type &quot;AVR-SD&quot;. </p>
 <p>Модель регулятора возбуждения типа &quot;АРВ-СД&quot;. </p>
