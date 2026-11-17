@@ -1,7 +1,7 @@
 BSD 3-Clause License
 
 
-Copyright (c) 2002-2025, A.N. Belyaev
+Copyright (c) 2002-2026, A.N. Belyaev
 
 All rights reserved.
 
